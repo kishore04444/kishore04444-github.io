@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yantra HomePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="LOGO.jpg" type="image/x-icon">
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+  @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px; /* Adjust based on your actual navbar height */
+  }
+}
+
+  html{
+    scroll-behavior: smooth;
+  }
+    a{
+        text-decoration: none;
+    }
+.from-left, .from-right {
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.8s ease-in-out;
+}
+
+.animate-left {
+    opacity: 1;
+    transform: translateX(0); /* Reset to natural position */
+    animation: slideInLeft 0.8s forwards;
+}
+
+.animate-right {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInRight 0.8s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.home-page {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+    /* background-color: #fff; */
+    color: #111;
+    padding: 0;
+    /* padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px; */
+}
+ 
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #000;
+}
+
+.contact-btn {
+    padding: 6px 12px;
+    /* border: 1px solid black; */
+    border-radius: 4px;
+    /* background-color: black; */
+    background: linear-gradient(to right, #7584a8, #364364);
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Hero Section with Background */html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('company image.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 8%;
+  color: white;
+  position: relative;
+  
+}
+
+.hero-content {
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.4); /* optional soft overlay for better text contrast */
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero .intro {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.hero .desc {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.video-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.video-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Features Section */
+.features {
+  background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+    text-align: center;
+    /* margin: 0px 20px 60px; */
+    margin-right: 0px;
+    margin-left: 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Hover shadow */
+
+}
+
+.features img {
+    width: 100%;
+    max-width: 800px;
+    /* margin-top: 15px; */
+    border-radius: 6px;
+}
+
+/* Body Section */
+.body-section {
+    text-align: center;
+    margin: 40px 20px;
+}
+.body-section {
+  margin: 0;
+  margin-top: 0;
+}
+section {
+  padding: 80px 20px;
+}
+
+
+body {
+/* background: linear-gradient(135deg, #f5f5f5 0%, #cccccc 30%, #3b445c 70%, #2e364a 100%); */
+  /* background: linear-gradient(135deg, #7c8da1 0%, #64738d 25%, #3a4c6c 65%, #2e364a 100%);   */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+/* Use Cases */
+.use-cases {
+    /* margin: 60px 20px; */
+    text-align: center;
+        background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+
+}
+
+.use-cases h2 {
+  color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 32%;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Consistent image container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Optional zoom effect on hover */
+.container:hover .image {
+    transform: scale(1.05);
+}
+
+/* Hover overlay for use case points */
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    text-align: left;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.text ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.industry-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+/* Sliding Partner Logos */
+.slider {
+    overflow: hidden;
+    margin: 30px auto;
+    padding: 20px 0;
+    /* background: #fff; */
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(150px * 12);
+    animation: scroll 30s linear infinite;
+}
+
+.slide {
+    width: 150px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.bento-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    /* padding: 0 20px; */
+    text-align: center;
+    /* background-color: #2e364a; */
+}
+
+.section-title {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #111;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Glassmorphism applied here */
+.bento-box {
+    background: rgba(0, 0, 0, 0.15); /* darker background */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: left;
+    color: #fff;
+}
+
+.bento-box h3 {
+    color: #0c0c0c;
+    
+}
+
+.bento-box p {
+    color: #000000;
+      font-size: 1em;
+  line-height: 1.6;
+  /* color: #333; */
+}
+
+.bento-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* color:#000000; */
+}
+
+
+/* Newsletter */
+.newsletter {
+    padding: 80px 20px 120px;
+    /* background: #2e364a; */
+        background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22); /* Hover shadow */
+
+}
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Hover shadow */
+
+}
+.signup-box {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.signup-box input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.signup-box .cta-button {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+}
+.graphic img {
+    width: 100%;
+    max-width: 300px;
+}
+
+/*  ievements */
+.achievements {
+    padding: 100px 20px;
+      background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+    text-align: center;
+}
+.achievements h2 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    /* color: #111; */
+}
+.achievement-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.achievement-card {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 320px;
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+/* Achievements images alignment */
+.achievement-card img {
+    display: block;
+    margin: 0 auto 16px auto;
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 600px) {
+    .achievement-card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive for tablets and below */
+@media (max-width: 900px) {
+    .achievement-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .achievement-card {
+        max-width: 90%;
+        width: 100%;
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    .achievements {
+        padding: 40px 5px;
+    }
+    .achievement-card {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+    .achievement-card img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 120px 20px 120px;
+  /* background: #2e364a; */
+    background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+  text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Hover shadow */
+  overflow: hidden;
+}
+
+.testimonials h2 {
+  color: rgb(0, 0, 0);
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Slider Container */
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track */
+.testimonial-track {
+  display: flex;
+  gap: 20px;
+  animation: slide 40s linear infinite;
+  width: fit-content;
+}
+
+/* Each Testimonial Card */
+.testimonial {
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+}
+
+.author {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.author span {
+  display: block;
+  font-size: 0.85em;
+  color: #666;
+}
+
+/* Sliding Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+  .testimonial {
+    flex: 0 0 80%;
+  }
+
+  .testimonial-track {
+    animation: slideMobile 20s linear infinite;
+  }
+
+  @keyframes slideMobile {
+    0% {
+      transform: translateX(0);
+    } 
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 60px 20px;
+    background: white;
+    text-align: center;
+}
+
+.value-props {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+}
+
+.value-props ul {
+    list-style: none;
+    padding: 0;
+}
+
+.value-props li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.05em;
+}
+
+/* CTA SECTION */
+.cta-buttons {
+    margin-top: 30px;
+}
+
+.cta-buttons button {
+    padding: 12px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cta-buttons .black {
+    background: black;
+    color: white;
+}
+
+.cta-buttons .outline {
+    border: 1px solid black;
+    background: transparent;
+    color: black;
+}
+
+
+/* Footer */
+.footer {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 0.95em;
+  color: grey;
+  text-decoration: none;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #555;
+}
+
+.social-icons a {
+  font-size: 1.2em;
+  margin-right: 12px;
+  color: grey;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #333;
+}
+
+  /* Value Proposition Section */
+.value-proposition-section {
+  /* background: linear-gradient(135deg, #eaf0f8 0%, #c3ccdb 25%, #3a4c6c 65%, #2e364a 100%); */
+    color: white;
+  background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+    padding: 80px 0px;
+    font-family: 'Helvetica', sans-serif;
+    width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Hover shadow */
+
+}
+.value-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding inside the content box */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+.value-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.value-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.value-label {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.orange {
+    color: #ff4500;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.blue-bg {
+    background-color: #494b53;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.value-left h2 {
+    font-size: 2.2em;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.value-right p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #e6e6e6;
+}
+
+.demo-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.demo-btn:hover {
+    background: white;
+    color: #6b6e75;
+}
+
+
+/* Animation */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeLeft 1s forwards;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: fadeRight 1s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .value-content {
+        flex-direction: column;
+    }
+
+    .value-left h2,
+    .value-right p {
+        text-align: center;
+    }
+
+    .value-right {
+        text-align: center;
+    }
+}
+
+
+/* Footer Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0073e6;
+}
+
+/* Vision Platform */
+.vision-platform {
+  padding: 60px 20px;
+  color: white;
+    background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(57, 67, 79));
+  /* background: #fff; */
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Hover shadow */
+  /* border-radius: 16px; */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: - 20px; /* Add padding inside the content box */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* .vision-platform p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #e6e6e6;
+} */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-column,
+.right-column {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.section-label span {
+  /* color: #f45a0c; */
+  color: #7eabc8;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+  /* padding-top: 30px; */
+}
+
+.vision-platform h2 {
+  font-size: 32px;
+  margin: 15px 0 30px;
+}
+
+.feature-card {
+  /* background-color: #f5f7fb; */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Card-style lift */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Hover shadow */
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.feature-card p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
+.features-list {
+  /* list-style: none; */
+  padding-left: 30px;
+}
+
+.features-list li {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.right-column .description {
+  /* font-size: 16px;
+  color: #333;
+  margin-bottom: 20px; */
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #e6e6e6;
+  padding-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000;
+  transition: 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background: #000000;
+  color: #eaff00;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-block img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15); /* Enhanced depth for image */
+}
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 35px 40px; */
+          /* padding: 35px 80px 35px 40px; */
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      /* color: #ff4d00; */
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      padding: 8px 5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #484f63;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      opacity: 0;
+      visibility: hidden;
+        /* padding: 35px 80px 35px 40px; */
+      transform: translateY(10px);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      padding: 10px;
+      /* padding-right: 50px; */
+      border: 1px solid #eee;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      min-width: 340px;
+      display: flex;
+      gap: 40px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .dropdown-column a {
+      font-size: 20px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      /* padding-right: 20px; */
+    }
+
+    .dropdown-column a:hover {
+      color: #293f59;
+    }
+
+    .contact-btn {
+      /* background: black; */
+      background: linear-gradient(to right, #7584a8, #364364);
+      color: white;
+      padding: 8px 10px;
+      border-radius: 7px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    /* .contact-btn:hover {
+      background: yellow;
+    } */
+
+
+/* --- Responsive Enhancements --- */
+@media (max-width: 1024px) {
+  .bento-section, .bento-grid, .value-content, .content-wrapper, .newsletter-container, .achievement-cards, .footer-content {
+    flex-direction: column !important;
+    display: flex !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+  }
+  .bento-box, .card, .achievement-card, .footer-column, .signup-box, .graphic {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 15px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 10px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 1em;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .nav-links a, .contact-btn {
+    margin-left: 0;
+    margin-right: 10px;
+    padding: 8px 6px;
+    font-size: 1em;
+  }
+  .dropdown {
+    min-width: 200px;
+    flex-direction: column;
+    gap: 10px;
+    left: 0;
+    padding: 8px;
+  }
+  .hero {
+    height: auto;
+    padding: 40px 10px 20px 10px;
+    
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-content {
+    padding: 18px;
+    max-width: 100%;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .bento-box {
+    padding: 18px;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .card {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .container {
+    height: 160px;
+  }
+  .value-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 8px;
+  }
+  .value-left, .value-right {
+    min-width: 0;
+    text-align: center;
+  }
+  .vision-platform .content-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .left-column, .right-column {
+    min-width: 0;
+    width: 100%;
+  }
+  .newsletter-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .graphic img {
+    max-width: 100%;
+    height: auto !important;
+  }
+  .achievement-cards {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .footer-column {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 14px;
+  }
+  .hero h1 {
+    font-size: 2em;
+  }
+  .section-title, .value-left h2, .achievements h2, .vision-platform h2 {
+    font-size: 1.3em;
+  }
+  .newsletter, .testimonials, .achievements, .vision-platform, .cta-section, .features, .body-section, .bento-section {
+    padding: 30px 4px !important;
+  }
+  .signup-box {
+    padding: 14px;
+  }
+  .footer {
+    padding: 18px 4px;
+  }
+}
+
+/* Hide horizontal overflow */
+body, html {
+  overflow-x: hidden;
+}
+</style>
+</head>
+<body class="home-page">
+    <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">CompanyLogo</div>
+    <nav class="nav-links">
+      <a href="HomePage.html">Home</a>
+      <div class="nav-item">
+        <a href="">Industries</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-plug"></i> Power</a>
+            <a href="#"><i class="fas fa-brain"></i> AI</a>
+            <a href="#"><i class="fas fa-fire"></i> Thermal</a>
+          </div>
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+            <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
+            <a href="#"><i class="fas fa-vials"></i> Chemical</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Services</a>
+      <a href="AboutPage.html">About</a>
+      <a href="ContactPage.html" class="contact-btn" style="color: white;">Contact Us</a>
+    </nav>
+  </header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>YANTRA AI</h1>
+    <p class="intro">
+      Delivering intelligent automation and AI-driven solutions for modern industry.
+    </p>
+    <p class="desc">
+      Our advanced tools help industries operate smarter, safer, and more efficiently — enabling impactful digital transformation.
+    </p>
+    <a href="#value-proposition" class="video-btn">Watch Video ></a>
+  </div>
+</section>
+
+    <!-- Features/Partners -->
+<!-- Features/Partners -->
+<section class="features">
+    <!-- <p>..OUR FEATURES/PARTNERS HERE.. [sliding]</p> -->
+     <br><br>
+    <div class="slider">
+        <div class="slide-track">
+            <!-- Repeat logos to create infinite loop -->
+            <div class="slide"><img src="samplelogo1.jpg" alt="Partner 1"></div>
+            <div class="slide"><img src="samplellogo2.jpg" alt="Partner 2"></div>
+            <div class="slide"><img src="professional logo.webp" alt="Partner 3"></div>
+            <div class="slide"><img src="samplelogo3.jpg" alt="Partner 4"></div>
+            <div class="slide"><img src="samplelogo4.webp" alt="Partner 5"></div>
+            <div class="slide"><img src="samplelogo6.jpg" alt="Partner 6"></div>
+
+            <!-- Repeat again for smooth loop -->
+            <div class="slide"><img src="samplelogo1.jpg" alt="Partner 1"></div>
+            <div class="slide"><img src="samplellogo2.jpg" alt="Partner 2"></div>
+            <div class="slide"><img src="professional logo.webp" alt="Partner 3"></div>
+            <div class="slide"><img src="samplelogo3.jpg" alt="Partner 4"></div>
+            <div class="slide"><img src="samplelogo4.webp" alt="Partner 5"></div>
+            <div class="slide"><img src="samplelogo6.jpg" alt="Partner 6"></div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Body Section -->
+<section class="body-section" style="  background-image: radial-gradient(circle,  rgb(255, 255, 255),rgb(225, 225, 225), rgb(255, 255, 255));
+">
+    <section class="bento-section">
+        <h2 class="section-title">Why Choose Yantra?</h2>
+        <div class="bento-grid">
+            <div class="bento-box box1">
+                <h3>What We Offer</h3>
+                <p>
+                    Intelligent automation, predictive maintenance tools, and real-time industrial analytics that empower your operations.
+                </p>
+            </div>
+            <div class="bento-box box2">
+                <h3>Why It’s Valuable</h3>
+                <p>
+                    Boost productivity, reduce costs, and make data-driven decisions with our smart, scalable technology stack.
+                </p>
+            </div>
+            <div class="bento-box box3">
+                <h3>Who It’s For</h3>
+                <p>
+                    Industries like manufacturing, energy, logistics, and infrastructure — anyone aiming to digitize and optimize operations.
+                </p>
+            </div>
+            <div class="bento-box box4">
+                <h3>Our Approach</h3>
+                <p>
+                    Modular, cloud-ready, and edge-compatible solutions tailored to your specific use case and operational scale.
+                </p>
+            </div>
+        </div>
+        <br><br>
+    </section>
+  </section>
+
+<!-- Value Proposition Section -->
+<section class="value-proposition-section">
+  <div class="value-content">
+    <div class="value-left fade-in-left">
+      <div class="value-label">
+        <span class="orange">Value</span> <span class="blue-bg">Propositions</span>
+      </div>
+      <h2>Proprietary Computer Vision Applications For Enhanced Efficiency And Productivity</h2>
+    </div>
+
+    <div class="value-right fade-in-right">
+      <p>
+        Elevate your operational efficiency with our revolutionary, patented computer vision AI platform.
+        This state-of-the-art system is engineered to provide real-time, accurate measurements of crucial raw
+        material properties such as size, moisture, and grade. Leveraging advanced computer vision object
+        detection technology, our unique SaaS product delivers unparalleled precision and reliability,
+        boosting productivity across industrial operations. With AI-driven insights at its core, our
+        platform optimizes performance and streamlines processes, ensuring your operations run at their
+        peak efficiency.
+      </p>
+      <a href="ContactPage.html" class="demo-btn">Book a demo now</a>
+      <a href="https://www.youtube.com/" class="demo-btn">Watch Video</a>
+    </div>
+  </div>
+</section>
+
+  
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+      <br><br>
+        <h2>WHERE CAN BE USED..</h2>
+        <div class="cards">
+          <!-- Cement Industry -->
+          <div class="card">
+            <div class="container">
+              <img src="cement-industry.jpg" alt="Cement Industry" class="image">
+              <div class="overlay">
+                <div class="text">
+                  <ul>
+                    <li>Sinter Flame Monitoring</li>
+                    <li>Coal Particle Sizing</li>
+                    <li>Ladle Tracking & Refractory Monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h3 class="industry-title">Cement Industry</h3>
+          </div>
+
+          <div class="card">
+            <div class="container">
+              <img src="cement-industry.jpg" alt="Cement Industry" class="image">
+              <div class="overlay">
+                <div class="text">
+                  <ul>
+                    <li>Sinter Flame Monitoring</li>
+                    <li>Coal Particle Sizing</li>
+                    <li>Ladle Tracking & Refractory Monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h3 class="industry-title">Cement Industry</h3>
+          </div>
+      
+          <!-- Chemical Industry -->
+          <div class="card">
+            <div class="container">
+              <img src="chemical industry.webp" alt="Chemical Industry" class="image">
+              <div class="overlay">
+                <div class="text">
+                  <ul>
+                    <li>Leak Detection & Response</li>
+                    <li>Emission Monitoring</li>
+                    <li>Batch Quality Control</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h3 class="industry-title">Chemical Industry</h3>
+          </div>
+      
+          <!-- Power Industry -->
+          <div class="card">
+            <div class="container">
+              <img src="Power_2.jpg" alt="Power Industry" class="image">
+              <div class="overlay">
+                <div class="text">
+                  <ul>
+                    <li>Transformer Health Monitoring</li>
+                    <li>Grid Load Forecasting</li>
+                    <li>Energy Theft Detection</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h3 class="industry-title">Power Industry</h3>
+          </div>
+        </div>
+        <br><br>
+      </section>
+
+  
+      <!-- Vision platform -->
+<section class="vision-platform">
+  <div class="content-wrapper">
+    <div class="left-column" data-aos="fade-right" data-aos-duration="1000">
+      <br>
+      <p class="section-label"><span>VISION AI COMPUTING PLATFORM</span></p>
+      <h2>Choose Yantra Computer Vision AI Platform For A Competitive Edge</h2>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Single cockpit for all use cases</h3>
+        <p>
+          A centralized interface that enables seamless monitoring, analytics, and management of Vision AI use cases...
+        </p>
+      </div>
+      <ul class="features-list" data-aos="fade-up" data-aos-delay="400">
+        <li><h3>&nbsp;&nbsp;Plug–n–play platform</h3></li>
+        <li><h3>&nbsp;&nbsp;Best in class enterprise AI</h3></li>
+        <li><h3>&nbsp;&nbsp;Seamless workflow integration</h3></li>
+      </ul>
+    </div>
+
+    <div class="right-column" data-aos="fade-left" data-aos-duration="1000">
+      <p class="description">
+        Experience a comprehensive Computer Vision AI stack with Yantra Vision, available both on-premises and on-cloud...
+      </p>
+      <a href="ContactPage.html" class="cta-button" data-aos="zoom-in" data-aos-delay="200">Speak To An Expert</a>
+      <div class="image-block" data-aos="zoom-in-up" data-aos-delay="300">
+        <img src="AI Analytics istock lower res header_1.webp" alt="Vision AI Heat Image" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <br><br><br><br> -->
+<!-- ials Section -->
+<section class="testimonials">
+  <h2>Testimonials [what customers said about us]</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <!-- Original testimonials -->
+      <div class="testimonial">
+        <p>"A terrific piece of praise"</p>
+        <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"A fantastic bit of feedback"</p>
+        <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"An incredibly insightful comment"</p>
+        <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"A genuinely glowing review"</p>
+        <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+      </div>
+
+      <!-- Duplicated testimonials for seamless looping -->
+      <div class="testimonial">
+        <p>"A terrific piece of praise"</p>
+        <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"A fantastic bit of feedback"</p>
+        <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"An incredibly insightful comment"</p>
+        <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+      </div>
+      <div class="testimonial">
+        <p>"A genuinely glowing review"</p>
+        <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Achievements Section -->
+  <section class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-cards">
+      <div class="achievement-card from-left">
+        <img src="Personal+Achievements.jpg" alt="Trophy">
+        <h3>Subheading</h3>
+        <p>Body text for whatever you'd like to add more to the subheading.</p>
+      </div>
+      <div class="achievement-card from-left">
+        <img src="Personal+Achievements.jpg" alt="Trophy">
+        <h3>Subheading</h3>
+        <p>Body text for whatever you'd like to add more to the subheading.</p>
+      </div>
+      <div class="achievement-card from-right">
+        <img src="Achievements.jpg" alt="Award">
+        <h3>Subheading</h3>
+        <p>Body text for whatever you'd like to expand on the main point.</p>
+      </div>
+      <div class="achievement-card from-right">
+        <img src="Achievements.jpg" alt="Award">
+        <h3>Subheading</h3>
+        <p>Body text for whatever you'd like to expand on the main point.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+    <!-- Newsletter Signup Box -->
+<section class="newsletter">
+    <div class="newsletter-container">
+      <div class="signup-box">
+        <h2>Join Our Newsletter</h2>
+        <p>Stay ahead with the latest in AI and industrial innovation. No spam — just insights.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <br>
+          <div class="terms-container">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the <a href="#"> Terms & Privacy Policy</a></label>
+          </div>
+          <br>
+          <button type="submit" class="cta-button">Subscribe Now</button>
+        </form>
+      </div>
+      <!-- <div class="graphic">
+        <img style="width: 320px; height: 300px; border-radius: 10px;" src="istockphoto-1193425770-612x612.jpg" alt="Illustration">
+      </div> -->
+    </div>
+  </section>
+
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Company name</h4>
+        <p>Get in Touch</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:contact@yourcompany.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+      </div>
+  
+      <div class="footer-column">
+        <h4>Industries</h4>
+        <p>
+          <a href="IndustryPage.html">Chemical</a><br>
+          <a href="IndustryPage.html">Cement</a><br>
+          <a href="IndustryPage.html">Power</a><br>
+          <a href="IndustryPage.html">Other industries</a>
+        </p>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Support</h4>
+        <p>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">Cookies Policy</a>
+        </p>
+      </div>
+  
+      <div class="footer-column">
+        <h4>About us</h4>
+        <p>
+          <a href="#">Company</a><br>
+          <a href="#">Events</a><br>
+          <a href="#">Partners</a><br>
+          <a href="#">Careers</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('from-left')) {
+            entry.target.classList.add('animate-left');
+          } else if (entry.target.classList.contains('from-right')) {
+            entry.target.classList.add('animate-right');
+          }
+        }
+      });
+    });
+
+    // Observe both achievements and value proposition content
+    document.querySelectorAll('.from-left, .from-right').forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>
+    <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

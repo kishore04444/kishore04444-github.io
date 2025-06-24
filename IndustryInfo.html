@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Dropdown</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .navbar {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      font-size: 1.1em;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: #ff4d00;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      padding: 8px 10px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d00;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      min-width: 600px;
+      display: flex;
+      gap: 40px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dropdown-column a {
+      font-size: 14px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .dropdown-column a:hover {
+      color: #ff4d00;
+    }
+
+    .contact-btn {
+      background: #ff4d00;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: #e84300;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CompanyLogo</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <div class="nav-item">
+        <a href="#">Industries</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-cubes"></i> B2B SaaS</a>
+            <a href="#"><i class="fas fa-brain"></i> AI</a>
+            <a href="#"><i class="fas fa-globe"></i> Web3</a>
+          </div>
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+            <a href="#"><i class="fas fa-chart-line"></i> Finance</a>
+            <a href="#"><i class="fas fa-stethoscope"></i> Healthcare</a>
+          </div>
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-cart-shopping"></i> E-commerce</a>
+            <a href="#"><i class="fas fa-hotel"></i> Hospitality</a>
+            <a href="#"><i class="fas fa-gamepad"></i> Gaming</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#" class="contact-btn">Contact Us</a>
+    </nav>
+  </header>
+</body>
+</html>

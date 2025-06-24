@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cement Industry Issues Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f1112;
+      color: white;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 50px 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #4ade80;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+      margin: 50px 0;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: 40%;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      text-align: right;
+    }
+
+    .timeline-content h3 {
+      color: #4ade80;
+      margin-bottom: 5px;
+    }
+
+    .timeline-content h2 {
+      font-size: 2rem;
+      margin: 0 0 10px;
+    }
+
+    .timeline-content p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .timeline-img {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .timeline-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .timeline-content, .timeline-img {
+        width: 100%;
+      }
+
+      .timeline::before {
+        left: 20px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="timeline">
+
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-img">
+      <img src="cement-industry.jpg" alt="CO2 Emissions">
+    </div>
+    <div class="timeline-content">
+      <h3>HIGH CARBON EMISSIONS</h3>
+      <!-- <h2>1990</h2> -->
+      <p>Cement manufacturing is a significant contributor to global CO₂ emissions, causing environmental concerns.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-img">
+      <img src="chemical industry.webp" alt="Energy Consumption">
+    </div>
+    <div class="timeline-content">
+      <h3>ENERGY INTENSITY</h3>
+      <!-- <h2>2005</h2> -->
+      <p>The process requires high amounts of energy, increasing production costs and reliance on fossil fuels.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="zoom-in">
+    <div class="timeline-img">
+      <img src="ImageForArticle_22883_16903726885992819.webp" alt="Raw Material Scarcity">
+    </div>
+    <div class="timeline-content">
+      <h3>RAW MATERIAL SCARCITY</h3>
+      <!-- <h2>2015</h2> -->
+      <p>Depleting natural resources such as limestone and gypsum poses long-term sustainability challenges.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="fade-up">
+    <div class="timeline-img">
+      <img src="power industry.avif" alt="Regulations">
+    </div>
+    <div class="timeline-content">
+      <h3>REGULATORY PRESSURE</h3>
+      <!-- <h2>2023</h2> -->
+      <p>Increasing environmental regulations are forcing companies to invest in cleaner technologies and compliance.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 120,
+    once: true
+  });
+</script>
+
+</body>
+</html>

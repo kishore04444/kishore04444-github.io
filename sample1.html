@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Testimonials Section */
+  .testimonials {
+    padding: 50px 0px;
+    background: #33353a;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .testimonials h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  /* Slider Container */
+  .testimonial-slider {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* Track */
+  .testimonial-track {
+    display: flex;
+    gap: 20px;
+    animation: slide 40s linear infinite;
+    width: max-content;
+  }
+
+  /* Each Testimonial Card */
+  .testimonial {
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    word-spacing: 1%;
+    letter-spacing: 1px;
+    flex: 0 0 800px;
+    font-size: 28px;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .testimonial:hover {
+    transform: scale(1.05);
+  }
+
+  /* Sliding Animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Responsive Handling */
+  @media (max-width: 768px) {
+    .testimonial {
+      flex: 0 0 80%;
+    }
+
+    .testimonial-track {
+      animation: slideMobile 20s linear infinite;
+    }
+
+    @keyframes slideMobile {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Testimonials Section -->
+ <br>
+<section class="testimonials">
+  <h2>Testimonials [what customers said about us]</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <!-- Repeated Testimonials for Infinite Loop -->
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <!-- Repeat to allow seamless loop -->
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+      <div class="testimonial"><p>"AI Technology to Eliminate the Issues"</p></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

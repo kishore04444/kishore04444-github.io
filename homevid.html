@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yantra AI - Industrial AI Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yantra AI provides advanced computer vision and AI solutions for industrial automation and optimization">
+    <meta name="keywords" content="Yantra AI, industrial AI, computer vision, automation, predictive maintenance">
+    <meta property="og:title" content="Yantra AI - Industrial AI Solutions">
+    <meta property="og:description" content="Yantra AI provides advanced computer vision and AI solutions for industrial automation and optimization">
+    <meta property="og:image" content="https://yantraai.com/images/og-image.jpg">
+    <meta property="og:url" content="https://yantraai.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="LOGO.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #000;
+        }
+        .logo img {
+            max-height: 50px;
+            width: auto;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            margin: 0 15px;
+            color: #000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn {
+            padding: 8px 16px;
+            background: linear-gradient(to right, #364364, #7584a8);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(to right, #7584a8, #364364);
+            transform: scale(1.05);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+            min-width: 200px;
+            flex-direction: column;
+            gap: 5px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-item:hover .dropdown {
+            display: flex;
+            opacity: 1;
+        }
+
+        .dropdown-column {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .dropdown-column a {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            color: #000;
+            font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-column a i {
+            margin-right: 10px;
+            color: #364364;
+        }
+
+        .dropdown-column a:hover {
+            background: #f1f1f1;
+            color: #364364;
+            border-radius: 4px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #000;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.open .top {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.open .middle {
+            opacity: 0;
+        }
+
+        .hamburger.open .bottom {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 0 8%;
+            color: rgb(0, 0, 0);
+            margin-top: 70px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            background: rgb(237, 239, 241);
+            padding: 30px;
+            border-radius: 12px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .hero-content:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 8px 25px rgba(75, 79, 89, 0.971);
+            background: rgb(255, 255, 255);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero .intro {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .hero .desc {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .video-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-weight: bold;
+            color: #6e6c6c;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .video-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .partners-section {
+            padding: 60px 0;
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .partners-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .partners-section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #7584a8;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .partners-container {
+            display: flex;
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .partners-slide {
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .partner-logo {
+            width: 150px;
+            height: 100px;
+            background: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 8px 25px rgba(117, 132, 168, 0.4);
+            background: #f1f1f1;
+        }
+
+        .partner-logo img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .bento-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .bento-box {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            color: #fff;
+        }
+
+ Facet {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+            z-index: -1;
+        }
+
+        .bento-box h3 {
+            color: #0c0c0c;
+            margin-bottom: 15px;
+        }
+
+        .bento-box p {
+            color: #000000;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .bento-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-proposition-section {
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .value-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .value-left, .value-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .value-label {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .orange {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+        .blue-bg {
+            background-color: #494b53;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .value-left h2 {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .value-right p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #e6e6e6;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            padding: 14px 24px;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .demo-btn:hover {
+            background: white;
+            color: #364364;
+        }
+
+        .use-cases {
+            background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .use-cases h2 {
+            color: #000;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            flex: 1 1 300px;
+            max-width: 100%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover .image {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            text-align: left;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .text ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .industry-title {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #364364;
+        }
+
+        .vision-platform {
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(57, 67, 79));
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .left-column, .right-column {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .section-label span {
+            color: #7eabc8;
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        .vision-platform h2 {
+            font-size: 2rem;
+            margin: 15px 0 30px;
+            line-height: 1.3;
+        }
+
+        .feature-card {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #e6e6e6;
+        }
+
+        .features-list {
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            font-size: 1.1em;
+            margin: 15px 0;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features-list li:before {
+            content: "•";
+            color: #7eabc8;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+
+        .right-column .description {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #e6e6e6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            border: 2px solid #fff;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background: transparent;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #364364;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+        }
+
+        .testimonials {
+            background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: #000;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            animation: slide 40s linear infinite;
+            width: fit-content;
+            gap: 20px;
+        }
+
+        .testimonial {
+            flex: 0 0 300px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.02);
+        }
+
+        .testimonial .client-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .author {
+            font-weight: bold;
+            color: #364364;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .author span {
+            display: block;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: normal;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .achievements {
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .achievements h2 {
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .achievement-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            flex: 1 1 300px;
+            max-width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .achievement-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .achievement-card p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .newsletter {
+            background-image: radial-gradient(circle, rgb(166, 167, 168), rgb(198, 200, 202), rgb(255, 255, 255));
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .signup-box {
+            flex: 1 1 500px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .signup-box h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #364364;
+        }
+
+        .signup-box p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .signup-box input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .terms-container {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .terms-container a {
+            color: #364364;
+            text-decoration: underline;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #7584a8, #364364);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-box button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 200px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #364364;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: #364364;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 1.2em;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #364364;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .from-left, .from-right {
+            opacity: 0;
+            transition: all 0.8s ease-in-out;
+        }
+
+        .animate-left {
+            opacity: 1;
+            animation: slideInLeft 0.8s forwards;
+        }
+
+        .animate-right {
+            opacity: 1;
+            animation: slideInRight 0.8s forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar {
+                padding: 10px;
+                justify-content: space-between;
+            }
+
+            .logo img {
+                max-height: 40px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 1.2rem;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 10px;
+                box-shadow: none;
+                max-height: 0;
+            }
+
+            .nav-item.open .dropdown {
+                display: flex;
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .dropdown-column {
+                width: 100%;
+            }
+
+            .dropdown-column a {
+                justify-content: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 80vh;
+                padding: 20px;
+                text-align: center;
+                justify-content: center;
+                margin-top: 70px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-content {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .partners-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .partner-logo {
+                width: 120px;
+                height: 80px;
+            }
+
+            .bento-section,
+            .value-proposition-section,
+            .use-cases,
+            .vision-platform,
+            .testimonials,
+            .achievements,
+            .newsletter {
+                padding: 60px 20px;
+            }
+
+            .section-title,
+            .use-cases h2,
+            .testimonials h2,
+            .achievements h2 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+
+            .signup-box {
+                padding: 25px;
+            }
+
+            .testimonial-slider {
+                padding: 0 5px;
+            }
+
+            .testimonial-track {
+                gap: 0;
+                animation: slide 40s linear infinite;
+            }
+
+            .testimonial {
+                flex: 0 0 100%;
+                max-width: 100%;
+                min-width: 100%;
+                padding: 30px;
+                margin: 0;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .testimonial p {
+                font-size: 1.3em;
+                margin-bottom: 25px;
+                line-height: 1.8;
+            }
+
+            .author {
+                font-size: 1.2em;
+            }
+
+            .author span {
+                font-size: 1.1em;
+            }
+
+            .footer {
+                padding: 20px 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .footer-column {
+                flex: 1 1 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .footer-column h4 {
+                font-size: 1rem;
+            }
+
+            .footer-column a,
+            .footer-column p {
+                font-size: 0.85em;
+                margin-bottom: 5px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .copyright {
+                margin-top: 15px;
+                font-size: 0.75em;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .intro {
+                font-size: 1rem;
+            }
+
+            .demo-btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                text-align: center;
+            }
+
+            .logo img {
+                max-height: 30px;
+            }
+
+            .testimonial {
+                padding: 20px;
+            }
+
+            .testimonial p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                line-height: 1.7;
+            }
+
+            .author {
+                font-size: 1.1em;
+            }
+
+            .author span {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body class="home-page">
+    <header class="navbar">
+        <div class="logo"><img src="LOGO.jpg" alt="Yantra AI Logo"></div>
+        <nav class="nav-links">
+            <a href="hometrial.html">Home</a>
+            <div class="nav-item">
+                <a href="#industries" aria-haspopup="true">Industries</a>
+                <div class="dropdown" role="menu">
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-plug"></i> Power</a>
+                        <a href="#"><i class="fas fa-brain"></i> AI</a>
+                        <a href="#"><i class="fas fa-fire"></i> Thermal</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+                        <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
+                        <a href="#"><i class="fas fa-vials"></i> Chemical</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#services">Services</a>
+            <a href="AboutPage.html">About</a>
+            <a href="ContactPage.html" class="contact-btn">Contact Us</a>
+        </nav>
+        <div id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="aivideo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <h1>YANTRA AI</h1>
+            <p class="intro">
+                Delivering intelligent automation and AI-driven solutions for modern industry.
+            </p>
+            <p class="desc">
+                Our advanced tools help industries operate smarter, safer, and more efficiently — enabling impactful digital transformation.
+            </p>
+            <a href="#value-proposition" class="video-btn">Watch Video ></a>
+        </div>
+    </section>
+
+    <section class="partners-section" id="partners">
+        <h2>Supporting Partners</h2>
+        <div class="partners-container">
+            <div class="partners-slide">
+                <div class="partner-logo"><img src="samplelogo1.jpg" alt="Partner 1"></div>
+                <div class="partner-logo"><img src="samplellogo2.jpg" alt="Partner 2"></div>
+                <div class="partner-logo"><img src="professional logo.webp" alt="Partner 3"></div>
+                <div class="partner-logo"><img src="samplelogo3.jpg" alt="Partner 4"></div>
+                <div class="partner-logo"><img src="samplelogo4.webp" alt="Partner 5"></div>
+                <div class="partner-logo"><img src="samplelogo6.jpg" alt="Partner 6"></div>
+            </div>
+            <div class="partners-slide">
+                <div class="partner-logo"><img src="samplelogo1.jpg" alt="Partner 1"></div>
+                <div class="partner-logo"><img src="samplellogo2.jpg" alt="Partner 2"></div>
+                <div class="partner-logo"><img src="professional logo.webp" alt="Partner 3"></div>
+                <div class="partner-logo"><img src="samplelogo3.jpg" alt="Partner 4"></div>
+                <div class="partner-logo"><img src="samplelogo4.webp" alt="Partner 5"></div>
+                <div class="partner-logo"><img src="samplelogo6.jpg" alt="Partner 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bento-section">
+        <h2 class="section-title">Why Choose Yantra?</h2>
+        <div class="bento-grid">
+            <div class="bento-box box1">
+                <h3>What We Offer</h3>
+                <p>
+                    Intelligent automation, predictive maintenance tools, and real-time industrial analytics that empower your operations.
+                </p>
+            </div>
+            <div class="bento-box box2">
+                <h3>Why It's Valuable</h3>
+                <p>
+                    Boost productivity, reduce costs, and make data-driven decisions with our smart, scalable technology stack.
+                </p>
+            </div>
+            <div class="bento-box box3">
+                <h3>Who It's For</h3>
+                <p>
+                    Industries like manufacturing, energy, logistics, and infrastructure — anyone aiming to digitize and optimize operations.
+                </p>
+            </div>
+            <div class="bento-box box4">
+                <h3>Our Approach</h3>
+                <p>
+                    Modular, cloud-ready, and edge-compatible solutions tailored to your specific use case and operational scale.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-proposition-section" id="value-proposition">
+        <div class="value-content">
+            <div class="value-left fade-in-left">
+                <div class="value-label">
+                    <span class="orange">Value</span> <span class="blue-bg">Propositions</span>
+                </div>
+                <h2>Proprietary Computer Vision Applications For Enhanced Efficiency And Productivity</h2>
+            </div>
+            <div class="value-right fade-in-right">
+                <p>
+                    Elevate your operational efficiency with our revolutionary, patented computer vision AI platform.
+                    This state-of-the-art system is engineered to provide real-time, accurate measurements of crucial raw
+                    material properties such as size, moisture, and grade. Leveraging advanced computer vision object
+                    detection technology, our unique SaaS product delivers unparalleled precision and reliability,
+                    boosting productivity across industrial operations. With AI-driven insights at its core, our
+                    platform optimizes performance and streamlines processes, ensuring your operations run at their
+                    peak efficiency.
+                </p>
+                <a href="ContactPage.html" class="demo-btn">Book a demo now</a>
+                <a href="https://www.youtube.com/" class="demo-btn">Watch Video</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases" id="industries">
+        <h2>WHERE CAN BE USED</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="container">
+                    <img src="cement-industry.jpg" alt="Cement Industry" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            <ul>
+                                <li>Sinter Flame Monitoring</li>
+                                <li>Coal Particle Sizing</li>
+                                <li>Ladle Tracking & Refractory Monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="industry-title">Cement Industry</h3>
+            </div>
+            <div class="card">
+                <div class="container">
+                    <img src="chemical industry.webp" alt="Chemical Industry" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            <ul>
+                                <li>Leak Detection & Response</li>
+                                <li>Emission Monitoring</li>
+                                <li>Batch Quality Control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="industry-title">Chemical Industry</h3>
+            </div>
+            <div class="card">
+                <div class="container">
+                    <img src="Power_2.jpg" alt="Power Industry" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            <ul>
+                                <li>Transformer Health Monitoring</li>
+                                <li>Grid Load Forecasting</li>
+                                <li>Energy Theft Detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="industry-title">Power Industry</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-platform" id="services">
+        <div class="content-wrapper">
+            <div class="left-column" data-aos="fade-left" data-aos-duration="1000">
+                <p class="section-label"><span>VISION AI COMPUTING PLATFORM</span></p>
+                <h2>Choose Yantra Computer Vision AI Platform For A Competitive Edge</h2>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Single cockpit for all use cases</h3>
+                    <p>
+                        A centralized interface that enables seamless monitoring, analytics, and management of Vision AI use cases across your entire operation.
+                    </p>
+                </div>
+                <ul class="features-list" data-aos="fade-up" data-aos-delay="400">
+                    <li>Plug–n–play platform</li>
+                    <li>Best in class enterprise AI</li>
+                    <li>Seamless workflow integration</li>
+                </ul>
+            </div>
+            <div class="right-column" data-aos="fade-left" data-aos-duration="1000">
+                <p class="description">
+                    Experience a comprehensive Computer Vision AI stack with Yantra Vision, available both on-premises and on-cloud. Our platform combines cutting-edge AI models with industrial-grade reliability to deliver actionable insights in real-time.
+                </p>
+                <a href="ContactPage.html" class="cta-button" data-aos="zoom-in" data-aos-delay="200">Speak To An Expert</a>
+                <div class="image-block" data-aos="zoom-in-up" data-aos-delay="300">
+                    <img src="AI Analytics istock lower res header_1.webp" alt="Vision AI Heat Image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"Yantra's AI platform transformed our quality control process, reducing errors by 40% and increasing throughput by 25%."</p>
+                    <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"The predictive maintenance solution saved us over $500k in unplanned downtime costs in just the first quarter."</p>
+                    <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"Implementation was seamless and the ROI was evident within weeks. The Yantra team provided exceptional support throughout."</p>
+                    <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"We've tried several AI solutions, but Yantra's platform stands out for its accuracy and ease of integration with our existing systems."</p>
+                    <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"Yantra's AI platform transformed our quality control process, reducing errors by 40% and increasing throughput by 25%."</p>
+                    <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"The predictive maintenance solution saved us over $500k in unplanned downtime costs in just the first quarter."</p>
+                    <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"Implementation was seamless and the ROI was evident within weeks. The Yantra team provided exceptional support throughout."</p>
+                    <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="client-photo"></div>
+                    <p>"We've tried several AI solutions, but Yantra's platform stands out for its accuracy and ease of integration with our existing systems."</p>
+                    <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <h2>Our Achievements</h2>
+        <div class="achievement-cards">
+            <div class="achievement-card from-left">
+                <img src="Personal+Achievements.jpg" alt="Trophy">
+                <h3>AI Innovation Award 2023</h3>
+                <p>Recognized for groundbreaking industrial AI applications by the Global Technology Council.</p>
+            </div>
+            <div class="achievement-card from-left">
+                <img src="Personal+Achievements.jpg" alt="Partners">
+                <h3>50+ Industry Partners</h3>
+                <p>Trusted by leading companies across multiple industrial sectors worldwide.</p>
+            </div>
+            <div class="achievement-card from-left">
+                <img src="Achievements.jpg" alt="Deployments">
+                <h3>200+ Successful Deployments</h3>
+                <p>Proven track record of successful implementations across diverse industrial environments.</p>
+            </div>
+            <div class="achievement-card from-right">
+                <img src="Achievements.jpg" alt="Patent">
+                <h3>15 Patents Granted</h3>
+                <p>Protecting our innovative technologies that are transforming industrial operations.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <div class="signup-box">
+                <h2>Join Our Newsletter</h2>
+                <p>Stay ahead with the latest in AI and industrial innovation. No spam — just insights.</p>
+                <form action="/subscribe" method="POST">
+                    <input type="email" placeholder="Enter your email" required>
+                    <div class="terms-container">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms & Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="cta-button">Submit Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Yantra AI</h4>
+                <p>Get in Touch</p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/yantraai" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/yantraai" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:contact@yantraai.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <a href="#">Chemical</a>
+                <a href="#">Cement</a>
+                <a href="#">Power</a>
+                <a href="#">Manufacturing</a>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Documentation</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="AboutPage.html">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="ContactPage.html">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 Yantra AI. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById('hamburger');
+            const nav = document.querySelector('.nav-links');
+            const industriesLink = document.querySelector('.nav-item > a[href="#industries"]');
+            const dropdown = document.querySelector('.dropdown');
+
+            burger.addEventListener('click', () => {
+                const isOpen = burger.classList.toggle('open');
+                burger.setAttribute('aria-expanded', isOpen);
+                nav.classList.toggle('open');
+            });
+
+            industriesLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            industriesLink.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 767 && !link.parentElement.classList.contains('nav-item')) {
+                        burger.classList.remove('open');
+                        burger.setAttribute('aria-expanded', false);
+                        nav.classList.remove('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767 && !e.target.closest('.nav-item')) {
+                    dropdown.parentElement.classList.remove('open');
+                }
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('from-left')) {
+                            entry.target.classList.add('animate-left');
+                        } else if (entry.target.classList.contains('from-right')) {
+                            entry.target.classList.add('animate-right');
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('.from-left, .from-right').forEach((el) => {
+                observer.observe(el);
+            });
+
+            document.querySelector('form').addEventListener('submit', (e) => {
+                const email = document.querySelector('input[type="email"]').value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    e.preventDefault();
+                    alert('Please enter a valid email address.');
+                }
+            });
+
+            const partnersContainer = document.querySelector('.partners-container');
+            partnersContainer.addEventListener('mouseenter', () => {
+                partnersContainer.style.animationPlayState = 'paused';
+            });
+            partnersContainer.addEventListener('mouseleave', () => {
+                partnersContainer.style.animationPlayState = 'running';
+            });
+
+            const testimonialTrack = document.querySelector('.testimonial-track');
+            let isPaused = false;
+
+            testimonialTrack.addEventListener('touchstart', () => {
+                if (window.innerWidth <= 767) {
+                    isPaused = !isPaused;
+                    testimonialTrack.style.animationPlayState = isPaused ? 'paused' : 'running';
+                }
+            });
+
+            testimonialTrack.addEventListener('touchend', () => {
+                if (window.innerWidth <= 767 && isPaused) {
+                }
+            });
+
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'scale(1)';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            startEvent: 'DOMContentLoaded'
+        });
+    </script>
+</body>
+</html>

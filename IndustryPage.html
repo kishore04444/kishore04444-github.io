@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndustryPage</title>
+  <link rel="icon" href="LOGO.jpg" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    a{
+      text-decoration: none;
+      color:#000;
+    }
+
+    nav, .navbar, .footer-section, .top-bar {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      /* background-color: #2c3244; */
+          background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 60px 20px 40px 20px;
+  background: #f7f7fa;
+  text-align: center;
+}
+.hero h1, .centered {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 18px 0;
+  color: #ffffff;
+  line-height: 1.1;
+  word-break: break-word;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+  .hero h1, .centered {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding: 32px 8px 24px 8px;
+  }
+  .hero h1, .centered {
+    font-size: 1.3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Industry Section */
+    .industry-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* Card Style */
+    .industry-card {
+  background-image: radial-gradient(circle,  rgb(255, 255, 255),rgb(225, 225, 225), rgb(255, 255, 255));
+      color: #1d1f23;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Titles */
+    .industry-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #005eff;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    /* Headings */
+    .industry-heading {
+      font-size: 26px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      color: #1c1f2b;
+    }
+
+    /* Paragraph */
+    .industry-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Button */
+    .industry-button {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1.5px solid #004080;
+      color: #004080;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .industry-button:hover {
+      background-color: #004080;
+      color: #fff;
+    }
+    /* Navbar */
+    /* .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 40px;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+        font-weight: bold;
+    }
+
+    .nav-links a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #000;
+    }
+    .nav-links a:hover{
+        color: #0077cc;
+    }
+
+    .contact-btn {
+    padding: 6px 12px;
+    border: 1px solid #0077cc;
+    border-radius: 4px;
+    background-color: #0077cc;
+    color: white !important;
+    transition: background-color 0.3s ease;
+    }
+
+    .contact-btn:hover {
+    background-color: #005fa3;
+    } */
+
+    /* Navbar base styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  position: static;
+  background: none;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: none;
+  padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s;
+  border-bottom: none;
+  width: auto;
+  margin: 0 8px;
+}
+.hamburger {
+  display: none !important;
+}
+
+/* Remove all mobile-specific nav styles! */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 14px 12px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 12px;
+    align-items: center;
+  }
+  .nav-links a {
+    width: auto;
+    margin: 0 8px;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+}
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      /* color: #ff4d00; */
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      padding: 8px 5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #484f63;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      opacity: 0;
+      visibility: hidden;
+        /* padding: 35px 80px 35px 40px; */
+      transform: translateY(10px);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      padding: 10px;
+      /* padding-right: 50px; */
+      border: 1px solid #eee;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      min-width: 340px;
+      display: flex;
+      gap: 40px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .dropdown-column a {
+      font-size: 20px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      /* padding-right: 20px; */
+    }
+
+    .dropdown-column a:hover {
+      color: #293f59;
+    }
+
+    .contact-btn {
+      /* background: black; */
+        background: linear-gradient(to right, #7584a8, #364364);
+
+      color: white;
+      padding: 8px 10px;
+      border-radius: 7px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    /* .contact-btn:hover {
+      background: yellow;
+    } */
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #2e364a;
+    }
+
+    .navbar {
+      padding: 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      font-size: 1.1em;
+    }
+
+    .nav-links a {
+      color: rgb(0, 0, 0);
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .container-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      filter: brightness(0.7);
+    }
+
+    .my-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    /* .top-right {
+      position: absolute;
+      top: 100px;
+      right: 100px;
+      color: white;
+      font-size: 1.8rem;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 15px;
+      border-radius: 5px;
+    } */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    font-size: 5rem;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+    .trusted-by {
+      padding-top: 50px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: white;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center; /* Center the images horizontally */
+      padding: 70px;
+      padding-top: 50px;
+    }
+
+    .item {
+      flex: 0 0 calc(10% - 10px); /* 10 items side by side, accounting for gap */
+      box-sizing: border-box;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+
+
+        .list {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    }
+
+    .list .item {
+    transition: .5s;
+    filter: brightness(1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .list .item:hover {
+    filter: brightness(1);
+    transform: translateZ(200px);
+    }
+
+    .list .item:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+    }
+
+    .list .item:hover + * + * {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+    }
+
+    .list .item:hover + * + * + * {
+      filter: brightness(0.2);
+      transform: translateZ(30px) rotateY(10deg);
+    }
+
+    .list .item:has(+ *:hover) {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+    }
+
+    .list .item:has(+ * + *:hover) {
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+    }
+
+    .list .item:has(+ * + * + *:hover) {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(-10deg);
+    }
+
+    /* Optional: Make responsive for smaller screens */
+    @media (max-width: 768px) {
+      .item {
+        flex: 0 0 calc(33.33% - 10px); /* 3 per row on tablets */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .item {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on phones */
+      }
+    }
+ .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 40px 0;
+  color: #000;
+
+  /* Flexbox to align containers side by side */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* vertical and horizontal gap */
+}
+
+.text-box h2 {
+  color: crimson;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  background: rgba(11, 5, 5, 0.3);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-block {
+  padding: 15px 20px 15px 20px;
+  position: relative;
+  width: 48%; /* Slightly less than 50% to fit side-by-side */
+  background: rgba(11, 5, 5, 0.3);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  border-radius: 2%;
+  margin-top: 20px; /* 20px vertical spacing */
+}
+
+.timeline-block.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.left-container,
+.right-container {
+  position: relative;
+  /* Removed left: 0 and left: 50% to allow Flexbox to position them */
+}
+
+.text-box {
+  padding: 20px 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.text-box img.issue-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 15px;
+}
+
+.text-box h2 {
+  font-weight: 600;
+}
+
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.left-container-arrow,
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.left-container-arrow {
+  border-left: 15px solid #fff;
+  right: -10px;
+}
+
+.right-container-arrow {
+  border-right: 15px solid #fff;
+  left: -10px;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline::after {
+    left: 30px;
+  }
+
+  .timeline-block {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .right-container {
+    left: 0;
+  }
+
+  .timeline-block img {
+    left: 10px;
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    border-right: 15px solid #fff;
+    border-left: 0;
+    left: -15px;
+  }
+}
+
+    .footer {
+      background: #1e1e2e;
+      color: white;
+      padding: 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 10px;
+    }
+
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      color: white;
+    }
+
+    
+    h1 {
+    margin: 50px 0;
+    text-align: center;
+    color: white;
+    }
+
+    @keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    }
+
+    .fadeInUp-animation {
+    animation: 1.5s fadeInUp;
+    animation-timeline: view();
+    }
+
+    .fadeInUp-animation1 {
+    animation: fadeInUp 0.5s ;
+    /* animation-timeline: view(); */
+    }
+
+    /* Footer */
+    .footer {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #000;
+    }
+
+    .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    }
+
+    .footer-column {
+    flex: 1 1 200px;
+    }
+
+    .footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    }
+
+    .footer-column p, .footer-column a {
+    font-size: 0.95em;
+    color: grey;
+    text-decoration: none;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+    color: #555;
+    }
+
+    .social-icons a {
+    font-size: 1.2em;
+    margin-right: 12px;
+    color: grey;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+    color: #333;
+    }
+
+    .spacer {
+        height: 800px;
+        }
+/* 
+    .marquee {
+        position: relative;
+        background: #0f0f0f;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        color: #eee;
+        padding: 30px 0px 0px;
+        font-weight: 600;
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+        }
+    .marquee__inner {
+        display: flex;
+        width: fit-content;
+        flex: auto;
+        flex-direction: row;
+        }
+
+    .marquee__part {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0 4px;
+        }
+
+    .arrow {
+        width: 60px;
+        height: 80px;
+        margin: 0 1em;
+        transform: rotate(90deg);
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+    .arrow.active {
+        transform: rotate(-90deg);
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        } */
+.timeline-modern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 50px 20px;
+}
+
+.timeline-modern::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #ffffff;
+  transform: translateX(-50%);
+}
+
+.timeline-modern .timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px 0;
+  position: relative;
+}
+
+.timeline-modern .timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-modern .timeline-content {
+  width: 40%;
+  text-align: left;
+}
+
+.timeline-modern .timeline-item:nth-child(even) .timeline-content {
+  text-align: right;
+}
+
+.timeline-modern .timeline-content h3 {
+  color: #4ade80;
+  margin-bottom: 5px;
+}
+
+.timeline-modern .timeline-content h2 {
+  font-size: 2rem;
+  margin: 0 0 10px;
+}
+
+.timeline-modern .timeline-content p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.timeline-modern .timeline-img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-modern .timeline-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-modern .timeline-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .timeline-modern .timeline-content,
+  .timeline-modern .timeline-img {
+    width: 100%;
+  }
+
+  .timeline-modern::before {
+    left: 20px;
+    transform: none;
+  }
+}
+
+.background-timeline {
+  background-color: #f3f3f3;
+  padding: 50px 0;
+}
+
+.background-timeline h1{
+  color: black;
+  font-size: 2.5rem;
+}
+.faq-questions {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.faq.active{
+  background: none;
+  color:#4ade80 ;
+}
+.responsive-cell-block{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.faq-question-container p{
+  font-size: 1.8em;
+  /* font-weight: 550; */
+}
+
+.faq-questions {
+  font-size: 1.5rem; /* Increase as needed */
+}
+
+.faq-answer {
+  /* padding-top: 20px; */
+  font-size: 1.2rem; /* Increase as needed */
+  word-spacing: 0.2em;
+  /* letter-spacing: 0.1em; */
+  text-align: left;
+}
+
+    .faq_7 * {
+  font-family: Nunito, sans-serif;
+  
+}
+
+.faq_7 .responsive-cell-block {
+  min-height: 75px;
+}
+
+.faq_7 .text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+  padding: 15px;
+}
+
+.faq_7 .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.faq_7 .faq-head-bg {
+  /* background-color: #353f57; */
+  color: white;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 60%;
+  padding-top: 80px;
+  padding-right: 60px;
+  padding-bottom: 80px;
+  padding-left: 60px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
+.faq_7 .text-blk.faq-heading1 {
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: 900;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.faq_7 .text-blk.faq-subheading {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.faq_7 .faq-dropdown-bg {
+  padding-top: 80px;
+  padding-right: 60px;
+  padding-bottom: 80px;
+  padding-left: 60px;
+}
+
+.faq_7 .faq {
+  display: block;
+  flex-direction: column;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #004cff;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: 0px;
+  /* background-color: #2e364a; */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.faq_7 .faq-question-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+.faq_7 .faq-question-container:hover {
+  cursor: pointer;
+}
+
+.faq_7 .text-blk.faq-questions {
+  color: #ffffff;
+  font-size: 20px;
+  
+}
+
+.faq_7 .text-blk.faq-answer {
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  color: #000000;
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  
+}
+
+.faq_7 .text-blk.faq-subheading {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+  max-width: 590px;
+  font-size: 18px;
+  /* background-color: ; */
+}
+
+.faq_7 .answer-box {
+  max-height: 0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: max-height;
+}
+
+.faq_7 .faq.active .openimg {
+  transform: rotate(180deg);
+}
+
+.faq_7 .openimg {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
+  transition-property: transform;
+}
+
+.faq_7 .faq.active .answer-box {
+  max-height: 550px;
+  /* background-color: #ffffff; */
+  padding: 15px;
+}
+
+.faq_7 .faq-head-content {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  max-width: 450px;
+}
+
+.faq_7 .container-block {
+  max-width: 800px;
+}
+
+@media (max-width: 1024px) {
+  .faq_7 .text-blk.faq-answer {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq_7 .text-blk.faq-heading1 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+  }
+
+  .faq_7 .faq-head-content {
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .faq_7 .faq-head-bg {
+    padding-top: 50px;
+    padding-right: 60px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+  }
+
+  .faq_7 .faq-dropdown-bg {
+    padding-top: 50px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+  }
+
+  .faq_7 .text-blk.faq-questions {
+    font-size: 18px;
+  }
+
+  .faq_7 .text-blk.faq-answer {
+    font-size: 16px;
+  }
+
+  .faq_7 .text-blk.faq-subheading {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .faq_7 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-5.wk-ipadp-5.faq-head-bg {
+    padding-top: 80px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+    padding-left: 30px;
+  }
+  .faq_7 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-7.wk-ipadp-7.faq-dropdown-bg {
+    padding-top: 80px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+    padding-left: 30px;
+  }
+
+  .faq_7 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-5.wk-ipadp-5.faq-head-bg {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+
+  .faq_7 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-7.wk-ipadp-7.faq-dropdown-bg {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+  }
+
+  .faq_7 .text-blk.faq-answer {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    line-height: 22px;
+    font-size: 16px;
+  }
+
+  .faq_7 .text-blk.faq-questions {
+    font-size: 18px;
+  }
+
+  .faq_7 .text-blk.faq-heading1 {
+    font-size: 26px;
+  }
+
+  .faq_7 .text-blk.faq-subheading {
+    font-size: 17px;
+    line-height: 24px;
+  } 
+}
+
+    .articles-section p{
+        padding-top: 3%;
+        text-align: center;
+    }
+    .articles-section{
+      margin-top: 0%;
+    }
+/* 
+  .autoShow{
+      animation: autoShowAnimation both;
+      animation-timeline: view(50% 5%);
+      border: 3px solid #000000;
+      border-radius: 5%;
+      box-shadow: 0 8px 24px rgba(255, 238, 0, 0.1);
+
+  }
+  @keyframes autoShowAnimation{
+      from{
+          opacity: 0;
+          transform: translateY(200px) scale(0.5);
+      }to{
+          opacity: 1;
+          transform: translateY(0) scale(1);
+      }
+  } */
+   
+
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">CompanyLogo</div>
+    <!-- Add this just before <nav class="nav-links"> -->
+</button>
+    <nav class="nav-links">
+      <a href="HomePage.html">Home</a>
+      <div class="nav-item">
+        <a href="IndustryPage.html">Industries</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-plug"></i> Power</a>
+            <a href="#"><i class="fas fa-brain"></i> AI</a>
+            <a href="#"><i class="fas fa-fire"></i> Thermal</a>
+          </div>
+          <div class="dropdown-column">
+            <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+            <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
+            <a href="#"><i class="fas fa-vials"></i> Chemical</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Services</a>
+      <a href="AboutPage.html">About</a>
+      <a href="ContactPage.html" class="contact-btn" style="color: white;">Contact Us</a>
+    </nav>
+    <!-- Place this inside your navbar, before or after the nav links -->
+<button class="hamburger" id="hamburger-btn" aria-label="Open navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+  </header>
+  
+  <div class="container-hero">
+    <img src="company image.png" class="my-cover" alt="Hero Image">
+  </div>
+      <div class="centered"><h3>YANTRA AI</h3></div>
+
+
+  <!-- <h2 class="trusted-by">TRUSTED BY<p>(hover on images)</p></h2> -->
+    <h1 class="fadeInUp-animation1">Trusted By Companies</h1>  
+
+  <div class="list">
+    <div class="item"><img src="image1.jpg" alt="Image 1" /></div>
+    <div class="item"><img src="image2.jpg" alt="Image 2" /></div>
+    <div class="item"><img src="image1.jpg" alt="Image 1" /></div>
+    <div class="item"><img src="image2.jpg" alt="Image 2" /></div>
+    <div class="item"><img src="image1.jpg" alt="Image 1" /></div>
+    <div class="item"><img src="image2.jpg" alt="Image 2" /></div>
+    <div class="item"><img src="image1.jpg" alt="Image 1" /></div>
+    <div class="item"><img src="image2.jpg" alt="Image 2" /></div>
+  </div>
+<h1 class="fadeInUp-animation">Yantra AI's Solutions in Cement Industry</h1>
+<div class="timeline">
+  <div class="timeline-block left-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Cement Kiln" class="issue-image">
+      <h2>Cement Kiln Optimization</h2>
+      <small>Active</small>
+      <p>Optimize cement kilns with AI to reduce emissions, boost energy efficiency, and ensure stable operations for consistent profitability.</p>
+      <span class="left-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block right-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Refractory" class="issue-image">
+      <h2>Kiln Refractory Monitoring</h2>
+      <small>In Use</small>
+      <p>Real-time thermal imaging detects hotspots on kiln refractory linings, extending refractory life by 30% and reducing unplanned downtime.</p>
+      <span class="right-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block left-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Raw Material" class="issue-image">
+      <h2>Raw Material Monitoring</h2>
+      <small>Operational</small>
+      <p>Accurately gauging particle size in real time to predict crusher & screen maintenance needs, ensuring optimal equipment performance.</p>
+      <span class="left-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block right-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="AFR" class="issue-image">
+      <h2>AFR Composition Analysis</h2>
+      <small>Deployed</small>
+      <p>Classifying Alternative Fuels to predict calorific value, enabling stable energy production for the cement industry through smarter fuel use.</p>
+      <span class="right-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block left-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Moisture" class="issue-image">
+      <h2>Moisture Detection</h2>
+      <small>Live</small>
+      <p>Using thermal analysis to detect moisture levels in real-time to ensure fuel efficiency and prevent process interruptions.</p>
+      <span class="left-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block right-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Volume" class="issue-image">
+      <h2>Volumetric Analysis</h2>
+      <small>Monitored</small>
+      <p>Generate accurate volume estimates of materials using 3D vision systems for inventory and supply chain management.</p>
+      <span class="right-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block left-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Conveyor" class="issue-image">
+      <h2>Conveyor Belt Monitoring</h2>
+      <small>Running</small>
+      <p>Track belt wear and load distribution to reduce unscheduled downtimes and enhance material handling efficiency.</p>
+      <span class="left-container-arrow"></span>
+    </div>
+  </div>
+
+  <div class="timeline-block right-container">
+    <div class="text-box">
+      <img src="cement-industry.jpg" alt="Rock" class="issue-image">
+      <h2>Big Rock Detection</h2>
+      <small>Critical</small>
+      <p>Detecting oversized rocks in real time to protect crushers and improve safety and efficiency in downstream processes.</p>
+      <span class="right-container-arrow"></span>
+    </div>
+  </div>
+</div>
+<br><br>
+<!-- <section class="marquee">
+  <div class="marquee__inner">
+    <div class="marquee__part">
+      AI Technology to Eliminate The Issues
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="" />
+      </div>
+    </div>
+    <div class="marquee__part">
+      AI Technology to Eliminate The Issues        
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="" />
+      </div>
+    </div>
+    <div class="marquee__part">
+      AI Technology to Eliminate The Issues
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="" />
+      </div>
+    </div>
+    <div class="marquee__part">
+      AI Technology to Eliminate The Issues
+      <div class="arrow">
+        <img src="./assets/arrow.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="articles-section">
+  <div class="articles-grid">
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai1.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href="">
+        <img src="ai2.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai3.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For That</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai4.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For That</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai5.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai6.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+    <div class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai7.jpg" alt="Article Image" />
+        <h3>The Issue</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+    class="fadeInUp-animation">
+      <div class="article-card">
+        <a href=""><img src="ai8.jpg" alt="Article Image" />
+        <h3>News Article</h3>
+        <p>Solution For that</p></a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<!--  -->
+  <section class="industry-section">
+    <div class="industry-card" data-aos="fade-up">
+      <div class="industry-title">BENEFITS</div>
+      <h2 class="industry-heading">Improving overall fuel efficiency for a 10–15x ROI boost</h2>
+      <p class="industry-text">
+        Our solution tackles inefficient coal consumption, optimizes raw material mixes, and addresses carbon footprint reduction in cement industry. Benefit from 24/7 optimal process control, early warnings, corrective actions, and comprehensive post–mortem analysis.
+      </p>
+    </div>
+
+    <div class="industry-card" data-aos="fade-left">
+      <div class="industry-title">CLIENT STORIES</div>
+      <h2 class="industry-heading">Discover how Yantra.AI empowers businesses</h2>
+      <p class="industry-text">
+        Find out more about the success stories of our clients from across the industries.
+      </p>
+      <a href="#" class="industry-button">Client Stories</a>
+    </div>
+
+    <div class="industry-card" data-aos="zoom-in">
+      <div class="industry-title">VISION AI PLATFORM FOR INDUSTRY</div>
+      <h2 class="industry-heading">Our latest blogs</h2>
+      <p class="industry-text">
+        Insights and perspectives from Yantra.ai’s thought leaders.
+      </p>
+      <a href="ContactPage.html" class="industry-button">Connect With Us</a>
+    </div>
+  </section>
+
+<!-- FAQ'S -->
+<div class="faq_7" unique-script-id="w-w-dm-id">
+  <div class="responsive-container-block">
+    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-5 faq-head-bg" id="imgk">
+      <div class="faq-head-content">
+        <p class="text-blk faq-heading1">
+           How can we help you?
+        </p>
+        <p class="text-blk faq-subheading">
+          Explore answers to common questions about our AI-powered surveillance solutions.
+        </p>
+      </div>
+    </div>
+    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-7 faq-dropdown-bg" id="imiw">
+      <div class="container-block" id="iwk5t">
+        <div class="faq">
+          <span class="faq-question-container">
+            <p class="text-blk faq-questions">
+              Can you perform behavior or anomaly detection beyond object recognition?
+            </p>
+            <img class="openimg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/arrow.svg">
+          </span>
+          <div class="answer-box">
+            <p class="text-blk faq-answer">
+              <br>
+              Yes, we support behavioral analytics such as crowd formation, unusual speed/motion, loitering, and custom-defined activity patterns using temporal analysis and AI rule engines.            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <span class="faq-question-container">
+            <p class="text-blk faq-questions">
+              How is data privacy and security ensured in video processing?
+            </p>
+            <img class="openimg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/arrow.svg">
+          </span>
+          <div class="answer-box">
+            <p class="text-blk faq-answer">
+              <br>
+              We comply with GDPR and regional data laws. Video streams can be processed locally (edge AI), and all cloud data is encrypted in transit (TLS 1.3) and at rest (AES-256). We also support role-based access and audit trails.              </p>
+          </div>
+        </div>
+        <div class="faq">
+          <span class="faq-question-container">
+            <p class="text-blk faq-questions">
+              Do you offer APIs or SDKs for custom development?
+            </p>
+            <img class="openimg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/arrow.svg">
+          </span>
+          <div class="answer-box">
+            <p class="text-blk faq-answer">
+              <br>
+              Yes, we do offer APIs or SDKs for custom development?            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <span class="faq-question-container">
+            <p class="text-blk faq-questions">
+              How is model performance monitored and improved over time?            </p>
+            <img class="openimg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/arrow.svg">
+          </span>
+          <div class="answer-box">
+            <p class="text-blk faq-answer">
+              <br>
+            We maintain a continuous feedback loop using human-in-the-loop (HITL) workflows, active learning, and model drift detection to retrain and improve models based on real-world inputs.            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <span class="faq-question-container">
+            <p class="text-blk faq-questions">
+             What is the accuracy and false-positive rate of your system?            </p>
+            <img class="openimg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/arrow.svg">
+          </span>
+          <div class="answer-box">
+            <p class="text-blk faq-answer">
+              <br>
+              Detection accuracy is typically 95%+ in controlled environments. We implement multi-step filtering and temporal validation to minimize false positives under 3–5%, depending on the use case.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Company name</h4>
+        <p>Get in Touch</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Industries</h4>
+        <a href="#">Chemical</a>
+        <a href="#">Cement</a>
+        <a href="#">Power</a>
+        <a href="#">Other industries</a>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="footer-column">
+        <h4>About us</h4>
+        <a href="#">Company</a>
+        <a href="#">Events</a>
+        <a href="#">Partners</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll('.faq');
+
+    faqItems.forEach((faq) => {
+      const question = faq.querySelector('.faq-question-container');
+      const answerBox = faq.querySelector('.answer-box');
+      const arrow = faq.querySelector('.openimg');
+
+      // Set initial transition
+      answerBox.style.transition = 'max-height 0.5s ease';
+
+      question.addEventListener('click', () => {
+        if (faq.classList.contains('active')) {
+          // Collapse
+          answerBox.style.maxHeight = '0px';
+          faq.classList.remove('active');
+        } else {
+          // Expand
+          answerBox.style.maxHeight = answerBox.scrollHeight + 'px';
+          faq.classList.add('active');
+        }
+      });
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.timeline-block').forEach(block => {
+      observer.observe(block);
+    });
+
+    let currentScroll = 0;
+    let isScrollingDown = true;
+    let arrows = document.querySelectorAll(".arrow");
+
+    let tween = gsap
+    .to(".marquee__part", {
+        xPercent: -100,
+        repeat: -1,
+        duration: 10,
+        ease: "linear",
+    })
+    .totalProgress(0.5);
+  AOS.init({
+    duration: 1000,
+    offset: 120,
+    once: true
+  });
+
+  // let currentScroll = window.pageYOffset;
+  </script>
+
+    <!-- // gsap.set(".marquee__inner", { xPercent: -50 });
+    // window.addEventListener("scroll", function() {
+    //     if(window.pageYOffset > currentScroll){
+    //         isScrollingDown = true;
+    //     } else{
+    //         isScrollingDown = false;
+    //     }
+
+    //     gsap.to(tween, {
+    //     } else {e: isScrollingDown ? 1 : -1,
+    //         arrow.classList.add("active");
+    //     }
+    //     });ow.forEach((arrow) => {
+    //     if (isScrollingDown) {
+    //     currentScroll = window.pageYOffset;);
+    // }); } else {
+    //         arrow.classList.add("active");

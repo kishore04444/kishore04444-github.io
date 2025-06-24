@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Solutions in Cement Industry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f1112;
+      color: white;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 50px 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #4ade80;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+      margin: 50px 0;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: 40%;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      text-align: right;
+    }
+
+    .timeline-content h3 {
+      color: #4ade80;
+      margin-bottom: 5px;
+    }
+
+    .timeline-content h2 {
+      font-size: 2rem;
+      margin: 0 0 10px;
+    }
+
+    .timeline-content p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .timeline-img {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .timeline-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .timeline-content, .timeline-img {
+        width: 100%;
+      }
+
+      .timeline::before {
+        left: 20px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="timeline">
+
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-img">
+      <img src="ai_emission_control.jpg" alt="Emission Monitoring">
+    </div>
+    <div class="timeline-content">
+      <h3>EMISSION MONITORING & CONTROL</h3>
+      <p>AI video analytics detects visible emissions like dust or smoke from chimneys, enabling real-time alerts and reduced CO₂ output through timely corrective actions.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-img">
+      <img src="ai_energy_optimization.jpg" alt="Energy Optimization">
+    </div>
+    <div class="timeline-content">
+      <h3>ENERGY EFFICIENCY OPTIMIZATION</h3>
+      <p>Through heat signature analysis and equipment monitoring, AI optimizes kiln and mill operations, significantly reducing energy usage and cost.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="zoom-in">
+    <div class="timeline-img">
+      <img src="ai_predictive_maintenance.jpg" alt="Predictive Maintenance">
+    </div>
+    <div class="timeline-content">
+      <h3>PREDICTIVE MAINTENANCE</h3>
+      <p>AI tracks visual anomalies in machinery and material flow, predicting failures or wear in crushers, conveyors, and stockpiles to ensure continuous production.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-aos="fade-up">
+    <div class="timeline-img">
+      <img src="ai_compliance_automation.jpg" alt="Compliance Automation">
+    </div>
+    <div class="timeline-content">
+      <h3>COMPLIANCE AUTOMATION</h3>
+      <p>Automated reporting and rule-based video surveillance ensure that plants meet safety and environmental norms, avoiding regulatory penalties.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- AOS Animation Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 120,
+    once: true
+  });
+</script>
+
+</body>
+</html>
