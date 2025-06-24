@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Yantra AI | Shape the Future of AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #364364; /* Dark blue from homepage */
+            --primary-dark: #2a3552;
+            --secondary: #7584a8; /* Lighter blue from homepage */
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --dark-gray: #343A40;
+            --success: #28A745;
+            --warning: #FFC107;
+            --danger: #DC3545;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #7584a8 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: var(--dark-gray);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(54, 67, 100, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(54, 67, 100, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), rgba(54, 67, 100, 0.1));
+            opacity: 0.8;
+            filter: blur(60px);
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 100px;
+            right: 200px;
+            animation: float 6s ease-in-out infinite 2s;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            right: 400px;
+            animation: float 5s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* About Section */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--dark-gray);
+        }
+
+        .about-features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: rgba(54, 67, 100, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Values Section */
+        .values {
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .values .shape {
+            background: linear-gradient(45deg, var(--secondary), rgba(117, 132, 168, 0.1));
+        }
+
+        .values .shape-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            left: -200px;
+        }
+
+        .values .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(54, 67, 100, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+            font-size: 30px;
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: var(--gray);
+        }
+
+        /* Positions Section */
+        .positions {
+            background-color: white;
+        }
+
+        .positions-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: transparent;
+            border: 1px solid var(--gray);
+            color: var(--gray);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .position-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .position-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .position-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .position-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .position-meta i {
+            font-size: 16px;
+        }
+
+        .position-card p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .position-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            background-color: rgba(54, 67, 100, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .position-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .position-link i {
+            transition: var(--transition);
+        }
+
+        .position-link:hover {
+            gap: 10px;
+        }
+
+        .position-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits .section-title h2,
+        .benefits .section-title p {
+            color: white;
+        }
+
+        .benefits .shape {
+            background: linear-gradient(45deg, var(--secondary), rgba(117, 132, 168, 0.1));
+        }
+
+        .benefits .shape-1 {
+            width: 700px;
+            height: 700px;
+            top: -300px;
+            right: -300px;
+            opacity: 0.2;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background-color: rgba(54, 67, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: rgb(254, 250, 250);
+            font-size: 24px;
+        }
+
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2a3552 0%, #364364 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta .shape {
+            background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.1));
+        }
+
+        .cta .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            opacity: 0.2;
+        }
+
+        .cta .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -200px;
+            right: -100px;
+            opacity: 0.1;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 54px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding-top: 120px;
+                min-height: auto;
+                height: auto;
+                padding-bottom: 80px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero-shapes {
+                display: none;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta h2 {
+                font-size: 36px;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="LOGO.jpg" alt="Yantra AI">
+                <span>Yantra AI</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="hometrial.html">Home</a></li>
+                <li><a href="about.html">Industries</a></li>
+                <li><a href="about.html">Services</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="AboutPage.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Build the Future of AI with Us</h1>
+                <p class="fade-in">Join our team of visionaries and engineers pushing the boundaries of artificial intelligence. At Yantra AI, we're solving tomorrow's problems today.</p>
+                <div class="hero-btns fade-in">
+                    <a href="#positions" class="btn btn-primary">View Open Positions</a>
+                    <a href="#values" class="btn btn-secondary">Learn About Us</a>
+                </div>
+            </div>
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="fade-in">Why Yantra AI?</h3>
+                    <p class="fade-in">We're not just another AI company. We're a collective of thinkers, builders, and dreamers who believe artificial intelligence should be accessible, ethical, and transformative.</p>
+                    <p class="fade-in">Founded in 2025, we've grown from a small research team to a global leader in enterprise AI solutions, serving Fortune 500 companies and innovative startups alike.</p>
+                    <div class="about-features">
+                        <div class="feature-item fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fast Growth</h4>
+                                <p>300% year-over-year growth with expanding global offices</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Top Talent</h4>
+                                <p>Work with the brightest minds in AI and machine learning</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Cutting-Edge Projects</h4>
+                                <p>Solve real-world problems with innovative AI solutions</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Global Impact</h4>
+                                <p>Our work reaches millions across 30+ countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="teampic.png" alt="Yantra AI Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section values" id="values">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Our Core Values</h2>
+                <p class="fade-in">These principles guide everything we do at Yantra AI</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We challenge the status quo and pioneer new approaches to AI that create real value.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Great ideas come from teamwork. We work across disciplines to achieve extraordinary results.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Ethics First</h3>
+                    <p>We build AI responsibly, with fairness, transparency, and privacy at the core.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Continuous Growth</h3>
+                    <p>We invest in our people, providing opportunities to learn and advance their careers.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Perspective</h3>
+                    <p>Our diverse team brings worldviews that make our solutions more inclusive.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-laugh"></i>
+                    </div>
+                    <h3>Work Joyfully</h3>
+                    <p>We believe doing meaningful work should be energizing and fun.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Bold Experimentation</h3>
+                    <p>We embrace calculated risks and radical thinking. At Yantra AI, we reward curiosity and the courage to challenge conventional approaches.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Human-Centered AI</h3>
+                    <p> We design AI solutions that augment human potential—never replace it. Empathy and inclusivity drive every algorithm we build.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positions Section -->
+    <section class="section positions" id="positions">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Open Positions</h2>
+                <p class="fade-in">Join our team and help shape the future of artificial intelligence</p>
+            </div>
+            <div class="positions-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All Positions</button>
+                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+            </div>
+            <div class="positions-grid">
+                <div class="position-card fade-in" data-category="engineering">
+                    <h3>Senior Machine Learning Engineer</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 2 days ago</span>
+                    </div>
+                    <p>Design and implement state-of-the-art machine learning models to solve complex problems across various domains.</p>
+                    <div class="position-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="position-card fade-in" data-category="research">
+                    <h3>AI Research Scientist</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Coimbatore </span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+                    </div>
+                    <p>Conduct cutting-edge research in deep learning and publish findings that advance the field of artificial intelligence.</p>
+                    <div class="position-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Publications</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="position-card fade-in" data-category="product">
+                    <h3>Product Manager - AI Platform</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Chennai</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 3 days ago</span>
+                    </div>
+                    <p>Lead the development of our core AI platform, working with engineering and design to deliver exceptional products.</p>
+                    <div class="position-tags">
+                        <span class="tag">Product</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Roadmapping</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="position-card fade-in" data-category="engineering">
+                    <h3>Frontend Engineer</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 5 days ago</span>
+                    </div>
+                    <p>Build beautiful, interactive interfaces that make complex AI systems accessible to users of all technical levels.</p>
+                    <div class="position-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="position-card fade-in" data-category="business">
+                    <h3>Enterprise Sales Director</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i>Tirupur</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 1 day ago</span>
+                    </div>
+                    <p>Help Fortune 500 companies transform their businesses with our AI solutions through strategic partnerships.</p>
+                    <div class="position-tags">
+                        <span class="tag">Sales</span>
+                        <span class="tag">Enterprise</span>
+                        <span class="tag">AI Solutions</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="position-card fade-in" data-category="engineering">
+                    <h3>DevOps Engineer</h3>
+                    <div class="position-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-clock"></i> Posted 2 weeks ago</span>
+                    </div>
+                    <p>Build and maintain the infrastructure that powers our AI platform at global scale with reliability and security.</p>
+                    <div class="position-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Terraform</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                    <a href="#" class="position-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Our Benefits</h2>
+                <p class="fade-in">We take care of our team so they can do their best work</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Competitive Compensation</h3>
+                    <p>Industry-leading salaries, equity packages, and performance bonuses that reward your contributions.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health & Wellness</h3>
+                    <p>Comprehensive medical, dental, and vision coverage for you and your family, plus mental health support.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Flexible Work</h3>
+                    <p>Work remotely or from our beautiful offices. We trust you to manage your time and location.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Budget</h3>
+                    <p>$5,000 annual stipend for conferences, courses, and books to fuel your professional growth.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Unlimited PTO</h3>
+                    <p>Take time when you need it. We encourage at least 3 weeks off per year to recharge.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Parental Leave</h3>
+                    <p>16 weeks fully paid leave for all new parents, plus flexible return-to-work options.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Meals & Snacks</h3>
+                    <p>Daily catered lunches and fully stocked kitchens in all our offices.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Cutting-Edge Tech</h3>
+                    <p>Top-of-the-line equipment and tools to do your best work without constraints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to Build the Future with Us?</h2>
+            <p class="fade-in">Whether you're an experienced professional or just starting your career, we'd love to hear from you.</p>
+            <div class="cta-btns fade-in">
+                <a href="#positions" class="btn btn-white">View Open Positions</a>
+                <a href="mailto:careers@yantraai.com" class="btn btn-outline-white">Contact Our Team</a>
+            </div>
+        </div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="LOGO.jpg" alt="Yantra AI">
+                        <span></span>
+                    </a>
+                    <p>Building ethical, transformative AI solutions for businesses and society.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html#enterprise">Enterprise AI</a></li>
+                        <li><a href="solutions.html#nlp">Natural Language Processing</a></li>
+                        <li><a href="solutions.html#vision">Computer Vision</a></li>
+                        <li><a href="solutions.html#predictive">Predictive Analytics</a></li>
+                        <li><a href="solutions.html#robotics">AI for Robotics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Coimbatore , Tamilnadu</p>
+                    <p><i class="fas fa-phone-alt"></i>+91 98439 21316</p>
+                    <p><i class="fas fa-envelope"></i> yantraai@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM PST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Yantra AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Position Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const positionCards = document.querySelectorAll('.position-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter positions
+                const filter = btn.dataset.filter;
+                positionCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // Initial check
+        fadeInOnScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            startEvent: 'DOMContentLoaded'
+        });
+    </script>
+</body>
+</html>
