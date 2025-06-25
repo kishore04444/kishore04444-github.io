@@ -4,1148 +4,1273 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactPage</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link rel="icon" href="LOGO.jpg">
+    <link rel="icon" href="LOGO.jpg" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Contact Page */
+        body.contact-page {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #000;
+            padding-top: 70px; /* Match navbar height on desktop */
+        }
 
-<style>
-  
-/*  */
-/* Contact Page */
-body.contact-page {
-  margin: 0;
-  /* font-size: 1.19em  ; */
-  font-family: 'Segoe UI', sans-serif;
-  /* background: #fff; */
-  color: #000;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-  padding-top: 60px; /* Adjust this value to match your navbar height */
-}
+        @media (max-width: 900px) {
+            body.contact-page {
+                padding-top: 48px; /* Match navbar height on mobile */
+            }
+        }
 
-@media (max-width: 600px) {
-  body.contact-page {
-    padding-top: 48px; /* Adjust for smaller navbar on mobile if needed */
-  }
-}
+        @media (max-width: 600px) {
+            body.contact-page {
+                padding-top: 44px; /* Even smaller for very small screens */
+            }
+        }
 
-.demo-section {
-      background-image: radial-gradient(circle, rgb(225, 225, 225), rgb(198, 200, 202), rgb(255, 255, 255));
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 80px 40px;
-}
-
-.form-content {
-  flex: 1 1 45%;
-  min-width: 320px;
-}
-
-.form-content h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.subheading {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.demo-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.form-row {
-  display: flex;
-  gap: 15px;
-}
-
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  font-size: 16px;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-button {
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: #222;
-}
-
-.form-image {
-  flex: 1 1 45%;
-  min-width: 300px;
-}
-
-.form-image img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Locations Section */
-.locations {
-  padding: 60px 40px;
-  font-size: 1.1em;
-  /* background: #f4f4f4; */
-      background-image: radial-gradient(circle, rgb(225, 225, 225), rgb(198, 200, 202), rgb(255, 255, 255));
-  text-align: center;
-}
-
-
-.locations h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-.location-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.location-card {
-  background: #f0eefc;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 300px;
-  flex: 1 1 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.location-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Animations */
-.fade-up, .zoom-in, .fade-slide {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.zoom-in {
-  transform: scale(0.9);
-}
-
-.fade-slide {
-  transform: translateX(40px);
-}
-
-.in-view {
-  opacity: 1;
-  transform: none;
-}
-
-/* .locations {
-  padding: 60px 20px;
-  background: #f4f4f4;
-  text-align: center;
-} */
-
-.locations h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.location-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: stretch;
-}
-
-.location-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  padding: 20px;
-  /* max-width: 300px; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.location-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-}
-
-.location-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.location-card h3 {
-  margin: 10px 0 5px;
-  color: #222;
-}
-
-.location-card p {
-  color: #666;
-  font-size: 0.95em;
-  line-height: 1.5;
-}
-
-/* Animation class for fade-slide effect */
-.fade-slide {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.in-view.fade-slide {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* FAQ's */
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 1.2em;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-    /* Enhanced Newsletter */
-    .newsletter {
-        padding: 80px 20px;
-        background: linear-gradient(to right, #f9f9f9, #ffffff);
-    }
-    
-    .newsletter-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-    
-    .signup-box {
-        flex: 1;
-        min-width: 320px;
-        background: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        transition: box-shadow 0.3s ease;
-    }
-    
-    .signup-box:hover {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .signup-box h2 {
-        font-size: 1.8em;
-        margin-bottom: 10px;
-        color: #111;
-    }
-    
-    .signup-box p {
-        font-size: 1em;
-        margin-bottom: 20px;
-        color: #444;
-    }
-    
-    .signup-box form {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .signup-box input[type="email"] {
-        padding: 12px;
-        font-size: 1em;
-        margin-bottom: 15px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-    }
-    
-    .terms-container {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        font-size: 0.9em;
-        margin-bottom: 20px;
-    }
-    
-    .terms-container input[type="checkbox"] {
-        margin-top: 4px;
-    }
-    
-    .terms-container label a {
-        color: #007BFF;
-        text-decoration: none;
-    }
-    
-    .terms-container label a:hover {
-        text-decoration: underline;
-    }
-    
-    .cta-button {
-        background: #000;
-        color: #fff;
-        padding: 12px;
-        font-size: 1em;
-        font-weight: bold;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-    
-    .cta-button:hover {
-        background: #333;
-    }
-    
-    .graphic img {
-        width: 100%;
-        max-width: 360px;
-        border-radius: 8px;
-    }
-    
-    @media (max-width: 768px) {
-        .newsletter-container {
-            flex-direction: column;
+        .demo-section {
+            background-image: radial-gradient(circle, rgb(225, 225, 225), rgb(198, 200, 202), rgb(255, 255, 255));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: flex-start;
+            gap: 40px;
+            padding: 80px 40px;
         }
-    
+
+        .form-content {
+            flex: 1 1 45%;
+            min-width: 320px;
+        }
+
+        .form-content h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subheading {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #222;
+        }
+
+        .form-image {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .form-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 60px 40px;
+            font-size: 1.1em;
+            background-image: radial-gradient(circle, rgb(225, 225, 225), rgb(198, 200, 202), rgb(255, 255, 255));
+            text-align: center;
+        }
+
+        .locations h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .location-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .location-card {
+            background: #f0eefc;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 300px;
+            flex: 1 1 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        .fade-up, .zoom-in, .fade-slide {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .zoom-in {
+            transform: scale(0.9);
+        }
+
+        .fade-slide {
+            transform: translateX(40px);
+        }
+
+        .in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        .locations h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            align-items: stretch;
+        }
+
+        .location-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .location-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .location-card h3 {
+            margin: 10px 0 5px;
+            color: #222;
+        }
+
+        .location-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Animation class for fade-slide effect */
+        .fade-slide {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .in-view.fade-slide {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ's */
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        /* Enhanced Newsletter */
+        .newsletter {
+            padding: 80px 20px;
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+        }
+
+        .newsletter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .signup-box {
+            flex: 1;
+            min-width: 320px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .signup-box:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-box h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .signup-box p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .signup-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-box input[type="email"] {
+            padding: 12px;
+            font-size: 1em;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .terms-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .terms-container input[type="checkbox"] {
+            margin-top: 4px;
+        }
+
+        .terms-container label a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .terms-container label a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            background: #000;
+            color: #fff;
+            padding: 12px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
         .graphic img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 360px;
+            border-radius: 8px;
         }
-    }
-
-    /* Testimonials Section */
-.testimonials {
-  padding: 60px 20px;
-  /* background: #2e364a; */
-      background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
-  
-  text-align: center;
-  overflow: hidden;
-}
-
-.testimonials h2 {
-  color: white;
-  margin-bottom: 30px;
-  font-size: 28px;
-}
-
-/* Slider Container */
-.testimonial-slider {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* Track */
-.testimonial-track {
-  display: flex;
-  gap: 20px;
-  animation: slide 40s linear infinite;
-  width: fit-content;
-}
-
-/* Each Testimonial Card */
-.testimonial {
-  flex: 0 0 300px;
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.testimonial:hover {
-  transform: scale(1.05);
-}
-
-.author {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.author span {
-  display: block;
-  font-size: 0.85em;
-  color: #666;
-}
-
-/* Sliding Animation */
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Responsive Handling */
-@media (max-width: 768px) {
-  .testimonial {
-    flex: 0 0 80%;
-  }
-
-  .testimonial-track {
-    animation: slideMobile 20s linear infinite;
-  }
-
-  @keyframes slideMobile {
-    0% {
-      transform: translateX(0);
-    } 
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-}
-
-  /* Value Proposition Section */
-.value-proposition-section {
-    /* background-color: #2e364a; */
-        background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
-    color: white;
-    padding: 80px 0px;
-    font-family: 'Helvetica', sans-serif;
-    width: 100%;
-}
-.value-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px; /* Add padding inside the content box */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-}
-.value-left {
-    flex: 1;
-    min-width: 300px;
-}
 
-.value-right {
-    flex: 1;
-    min-width: 300px;
-}
-
-.value-label {
-    font-size: 0.9em;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.orange {
-    color: #ff4500;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.blue-bg {
-    background-color: #494b53;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.value-left h2 {
-    font-size: 2.2em;
-    line-height: 1.3;
-    font-weight: 600;
-}
-
-.value-right p {
-    font-size: 1.05em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #e6e6e6;
-}
-
-.demo-btn {
-    display: inline-block;
-    padding: 14px 24px;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.demo-btn:hover {
-    background: white;
-    color: #6b6e75;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.contact-btn:hover {
-  background: linear-gradient(to right, #5f6e8e, #2f3955);
-}
-
-    /* .contact-btn:hover {
-      background: yellow;
-    } */
-
-
-
-/* Footer */
-.footer {
-  background: #f9f9f9;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
-}
-
-.footer-column {
-  flex: 1 1 200px;
-}
-
-.footer-column h4 {
-  margin-bottom: 15px;
-  font-size: 1.1em;
-}
-
-.footer-column p,
-.footer-column a {
-  font-size: 0.95em;
-  color: grey;
-  text-decoration: none;
-  line-height: 1.7;
-  transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-  color: #555;
-}
-
-.social-icons a {
-  font-size: 1.2em;
-  margin-right: 12px;
-  color: grey;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #333;
-}
-
-.faq-section {
-  width: 100%;
-  padding: 40px 0;
-  background-color: #f4f4f4;
-}
-
-.faq-container {
-  width: 100vw; /* full viewport width */
-  margin-left: calc(-50vw + 50%);
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Navbar */
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: white;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-}
-
-.nav-links a {
-    margin-left: 25px;
-    color: #000;
-    text-decoration: none;
-    padding: 8px 5px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #484f63;
-}
-
-.nav-item {
-    position: relative;
-}
-
-/* Dropdown Styles */
-.dropdown {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-    min-width: 340px;
-    display: flex;
-    gap: 40px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.nav-item:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.dropdown-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.dropdown-column a {
-    font-size: 20px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.dropdown-column a:hover {
-    color: #293f59;
-}
-
-.contact-btn {
-    background: linear-gradient(to right, #7584a8, #364364);
-    color: white;
-    padding: 8px 10px;
-    border-radius: 7px;
-    font-weight: 500;
-    transition: background 0.3s ease;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 10px;
-  }
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 1em;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .nav-links a, .contact-btn {
-    margin-left: 0;
-    margin-right: 10px;
-    padding: 8px 6px;
-    font-size: 1em;
-  }
-  .dropdown {
-    min-width: 200px;
-    flex-direction: column;
-    gap: 10px;
-    left: 0;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    padding: 8px 6px;
-  }
-  .nav-links {
-    gap: 10px;
-  }
-  .nav-links a {
-    font-size: 0.95rem;
-    padding: 6px 0;
-    margin: 0 4px;
-  }
-  .logo {
-    font-size: 1.1rem;
-  }
-}
-
-
-
-/* --- Responsive Enhancements --- */
-@media (max-width: 1024px) {
-  .demo-section {
-    flex-direction: column;
-    gap: 32px;
-    padding: 40px 16px;
-    align-items: stretch;
-  }
-  .form-content, .form-image {
-    min-width: 0;
-    width: 100%;
-    flex: 1 1 100%;
-  }
-  .locations {
-    padding: 40px 10px;
-  }
-  .newsletter {
-    padding: 40px 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  html, body {
-    font-size: 15px;
-  }
-
-  .demo-section {
-    flex-direction: column;
-    gap: 18px;
-    padding: 24px 4px;
-  }
-  .form-content, .form-image {
-    min-width: 0;
-    width: 100%;
-    flex: 1 1 100%;
-  }
-  .form-image {
-    padding-top: 0 !important;
-  }
-  .form-content h1 {
-    font-size: 1.5em;
-  }
-  .form-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .locations {
-    padding: 24px 4px;
-  }
-  .location-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .newsletter-container {
-    flex-direction: column;
-    gap: 18px;
-    align-items: stretch;
-  }
-  .signup-box {
-    padding: 18px;
-    min-width: 0;
-  }
-  .graphic img {
-    max-width: 100%;
-    height: auto !important;
-  }
-  .footer-content {
-    flex-direction: column;
-    gap: 18px;
-    align-items: stretch;
-  }
-  .footer-column {
-    min-width: 0;
-    width: 100%;
-  }
-  .faq-container {
-    width: 100%;
-    margin-left: 0;
-    padding: 0 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  html, body {
-    font-size: 14px;
-  }
-  .form-content h1 {
-    font-size: 1.1em;
-  }
-  .locations h2,
-  .testimonials h2,
-  .value-left h2 {
-    font-size: 1.1em;
-  }
-  .newsletter, .testimonials, .locations, .faq-section, .value-proposition-section {
-    padding: 18px 2px !important;
-  }
-  .signup-box {
-    padding: 8px;
-  }
-  .footer {
-    padding: 12px 2px;
-  }
-}
-
-/* Prevent horizontal scroll */
-body, html {
-  overflow-x: hidden;
-}
-</style>
-
+        @media (max-width: 768px) {
+            .newsletter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .graphic img {
+                max-width: 100%;
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 20px;
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .testimonials h2 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        /* Slider Container */
+        .testimonial-slider {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* Track */
+        .testimonial-track {
+            display: flex;
+            gap: 20px;
+            animation: slide 40s linear infinite;
+            width: fit-content;
+        }
+
+        /* Each Testimonial Card */
+        .testimonial {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+
+        .author {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .author span {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Sliding Animation */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive Handling */
+        @media (max-width: 768px) {
+            .testimonial {
+                flex: 0 0 80%;
+            }
+
+            .testimonial-track {
+                animation: slideMobile 20s linear infinite;
+            }
+
+            @keyframes slideMobile {
+                0% {
+                    transform: translateX(0);
+                } 
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        /* Value Proposition Section */
+        .value-proposition-section {
+            background-image: radial-gradient(circle, rgb(88, 109, 130), rgb(66, 83, 100), rgb(44, 56, 69));
+            color: white;
+            padding: 80px 0px;
+            font-family: 'Helvetica', sans-serif;
+            width: 100%;
+        }
+
+        .value-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px; /* Add padding inside the content box */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .value-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .value-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .value-label {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .orange {
+            color: #ff4500;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .blue-bg {
+            background-color: #494b53;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .value-left h2 {
+            font-size: 2.2em;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .value-right p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #e6e6e6;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            padding: 14px 24px;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background: white;
+            color: #6b6e75;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f9f9f9;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 200px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            font-size: 0.95em;
+            color: grey;
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #555;
+        }
+
+        .social-icons a {
+            font-size: 1.2em;
+            margin-right: 12px;
+            color: grey;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #333;
+        }
+
+        .faq-section {
+            width: 100%;
+            padding: 40px 0;
+            background-color: #f4f4f4;
+        }
+
+        .faq-container {
+            width: 100vw; /* full viewport width */
+            margin-left: calc(-50vw + 50%);
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles from Homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .logo img {
+            max-height: 50px;
+            width: auto;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            margin: 0 15px;
+            color: #000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn {
+            padding: 8px 16px;
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(to right, #e1e1e2, #e3e3e3);
+            transform: scale(1.05);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+            min-width: 200px;
+            flex-direction: column;
+            gap: 5px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-item:hover .dropdown {
+            display: flex;
+            opacity: 1;
+        }
+
+        .dropdown-column {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .dropdown-column a {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            color: #000;
+            font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-column a i {
+            margin-right: 10px;
+            color: #364364;
+        }
+
+        .dropdown-column a:hover {
+            background: #f1f1f1;
+            color: #364364;
+            border-radius: 4px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #000;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.open .top {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.open .middle {
+            opacity: 0;
+        }
+
+        .hamburger.open .bottom {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 767px) {
+            .navbar {
+                padding: 10px;
+                justify-content: space-between;
+            }
+
+            .logo img {
+                max-height: 40px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 1.2rem;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 10px;
+                box-shadow: none;
+                max-height: 0;
+            }
+
+            .nav-item.open .dropdown {
+                display: flex;
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .dropdown-column {
+                width: 100%;
+            }
+
+            .dropdown-column a {
+                justify-content: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .logo img {
+                max-height: 30px;
+            }
+        }
+
+        /* Existing Responsive Enhancements */
+        @media (max-width: 1024px) {
+            .demo-section {
+                flex-direction: column;
+                gap: 32px;
+                padding: 40px 16px;
+                align-items: stretch;
+            }
+            .form-content, .form-image {
+                min-width: 0;
+                width: 100%;
+                flex: 1 1 100%;
+            }
+            .locations {
+                padding: 40px 10px;
+            }
+            .newsletter {
+                padding: 40px 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html, body {
+                font-size: 15px;
+            }
+
+            .demo-section {
+                flex-direction: column;
+                gap: 18px;
+                padding: 24px 4px;
+            }
+            .form-content, .form-image {
+                min-width: 0;
+                width: 100%;
+                flex: 1 1 100%;
+            }
+            .form-image {
+                padding-top: 0 !important;
+            }
+            .form-content h1 {
+                font-size: 1.5em;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .locations {
+                padding: 24px 4px;
+            }
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .newsletter-container {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+            .signup-box {
+                padding: 18px;
+                min-width: 0;
+            }
+            .graphic img {
+                max-width: 100%;
+                height: auto !important;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+            .footer-column {
+                min-width: 0;
+                width: 100%;
+            }
+            .faq-container {
+                width: 100%;
+                margin-left: 0;
+                padding: 0 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html, body {
+                font-size: 14px;
+            }
+            .form-content h1 {
+                font-size: 1.1em;
+            }
+            .locations h2,
+            .testimonials h2,
+            .value-left h2 {
+                font-size: 1.1em;
+            }
+            .newsletter, .testimonials, .locations, .faq-section, .value-proposition-section {
+                padding: 18px 2px !important;
+            }
+            .signup-box {
+                padding: 8px;
+            }
+            .footer {
+                padding: 12px 2px;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        body, html {
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body class="contact-page">
-    <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">CompanyLogo</div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <div class="nav-item">
-        <a href="">Industries</a>
-        <div class="dropdown">
-          <div class="dropdown-column">
-            <a href="#"><i class="fas fa-plug"></i> Power</a>
-            <a href="#"><i class="fas fa-brain"></i> AI</a>
-            <a href="#"><i class="fas fa-fire"></i> Thermal</a>
-          </div>
-          <div class="dropdown-column">
-            <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
-            <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
-            <a href="#"><i class="fas fa-vials"></i> Chemical</a>
-          </div>
+    <!-- Navbar from Homepage -->
+    <header class="navbar">
+        <div class="logo"><img src="LOGO.jpg" alt="Yantra AI Logo"></div>
+        <nav class="nav-links">
+            <a href="hometrial.html">Home</a>
+            <div class="nav-item">
+                <a href="#industries" aria-haspopup="true">Industries</a>
+                <div class="dropdown" role="menu">
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-plug"></i> Power</a>
+                        <a href="#"><i class="fas fa-brain"></i> AI</a>
+                        <a href="#"><i class="fas fa-fire"></i> Thermal</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+                        <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
+                        <a href="#"><i class="fas fa-vials"></i> Chemical</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#services">Services</a>
+            <a href="careerpage.html">Careers</a>
+            <a href="AboutPage.html">About</a>
+            <a href="ContactPage.html" class="contact-btn">Contact Us</a>
+        </nav>
+        <div id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
         </div>
-      </div>
-      <a href="#">Services</a>
-      <a href="AboutPage.html">About</a>
-      <a href="ContactPage.html" class="contact-btn" style="color: white;">Contact Us</a>
-      <a href="" class=""></a>
-    </nav>
-  </header>
+    </header>
 
     <!-- Demo Section -->
-  <section class="demo-section">
-    <div class="form-content fade-up">
-      <h1>Book A Demo Now</h1>
-      <p class="subheading">Subheading for description or instructions</p>
-      <form class="demo-form">
-        <div class="form-row">
-          <input type="text" placeholder="First name" required />
-          <input type="text" placeholder="Last name" required />
+    <section class="demo-section">
+        <div class="form-content fade-up">
+            <h1>Book A Demo Now</h1>
+            <p class="subheading">Subheading for description or instructions</p>
+            <form class="demo-form">
+                <div class="form-row">
+                    <input type="text" placeholder="First name" required />
+                    <input type="text" placeholder="Last name" required />
+                </div>
+                <input type="email" placeholder="Email address" required />
+                <textarea placeholder="Your message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        <input type="email" placeholder="Email address" required />
-        <textarea placeholder="Your message"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="form-image zoom-in" style="padding-top: 50px;">
-      <img src="contact-banner.jpg" alt="Envelope"/>
-    </div>
-  </section>
-
-  
-<!-- Value Proposition Section -->
-<section class="value-proposition-section">
-  <div class="value-inner">
-    <div class="value-content">
-      <div class="value-left fade-in-left">
-        <div class="value-label">
-          <span class="orange">Value</span> <span class="blue-bg">Propositions</span>
+        <div class="form-image zoom-in" style="padding-top: 50px;">
+            <img src="contact-banner.jpg" alt="Envelope"/>
         </div>
-        <h2>Proprietary Computer Vision Applications For Enhanced Efficiency And Productivity</h2>
-      </div>
+    </section>
 
-      <div class="value-right fade-in-right">
-        <p>
-          Elevate your operational efficiency with our revolutionary, patented computer vision AI platform...
-        </p>
-        <a href="#" class="demo-btn">Book a demo now</a>
-        <a href="#" class="demo-btn">Watch Video</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Value Proposition Section -->
+    <section class="value-proposition-section">
+        <div class="value-inner">
+            <div class="value-content">
+                <div class="value-left fade-in-left">
+                    <div class="value-label">
+                        <span class="orange">Value</span> <span class="blue-bg">Propositions</span>
+                    </div>
+                    <h2>Proprietary Computer Vision Applications For Enhanced Efficiency And Productivity</h2>
+                </div>
+                <div class="value-right fade-in-right">
+                    <p>
+                        Elevate your operational efficiency with our revolutionary, patented computer vision AI platform...
+                    </p>
+                    <a href="#" class="demo-btn">Book a demo now</a>
+                    <a href="#" class="demo-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="locations fade-slide">
+        <h2>Located At</h2>
+        <div class="location-grid">
+            <div class="autoShow">
+                <div class="location-card">
+                    <img src="coimbatore.jpg" alt="Coimbatore">
+                    <h3>Coimbatore</h3>
+                    <p>Known for manufacturing and automation solutions hub in South India.</p>
+                </div>
+            </div>
+            <div class="autoShow">
+                <div class="location-card">
+                    <img src="erode.jpg" alt="Erode">
+                    <h3>Erode</h3>
+                    <p>Specializing in textile and industrial tech solutions.</p>
+                </div>
+            </div>
+            <div class="autoShow">
+                <div class="location-card">
+                    <img src="chennai.jpg" alt="Chennai">
+                    <h3>Chennai</h3>
+                    <p>Key branch for enterprise client support and R&D.</p>
+                </div>
+            </div>
+            <div class="autoShow">
+                <div class="location-card">
+                    <img src="andra.jpg" alt="Andhra Pradesh">
+                    <h3>Andhra Pradesh</h3>
+                    <p>Focuses on agricultural AI and analytics integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="locations fade-slide">
-  <h2>Located At</h2>
-  <div class="location-grid">
-  <div class="autoShow">
-  <div class="location-card">
-      <img src="coimbatore.jpg" alt="Coimbatore">
-      <h3>Coimbatore</h3>
-      <p>Known for manufacturing and automation solutions hub in South India.</p>
-    </div>
-  </div>
-  <div class="autoShow">
-    <div class="location-card">
-      <img src="erode.jpg" alt="Erode">
-      <h3>Erode</h3>
-      <p>Specializing in textile and industrial tech solutions.</p>
-    </div>
-  </div>
-  <div class="autoShow">
-    <div class="location-card">
-      <img src="chennai.jpg" alt="Chennai">
-      <h3>Chennai</h3>
-      <p>Key branch for enterprise client support and R&D.</p>
-    </div>
-  </div>
-  <div class="autoShow">
-    <div class="location-card">
-      <img src="andra.jpg" alt="Andhra Pradesh">
-      <h3>Andhra Pradesh</h3>
-      <p>Focuses on agricultural AI and analytics integration.</p>
-    </div>
-  </div>
-  </div>
-</section>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Testimonials [what customers said about us]</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <!-- Original testimonials -->
+                <div class="testimonial">
+                    <p>"A terrific piece of praise"</p>
+                    <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"A fantastic bit of feedback"</p>
+                    <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"An incredibly insightful comment"</p>
+                    <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"A genuinely glowing review"</p>
+                    <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+                </div>
+                <!-- Duplicated testimonials for seamless looping -->
+                <div class="testimonial">
+                    <p>"A terrific piece of praise"</p>
+                    <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"A fantastic bit of feedback"</p>
+                    <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"An incredibly insightful comment"</p>
+                    <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
+                </div>
+                <div class="testimonial">
+                    <p>"A genuinely glowing review"</p>
+                    <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials">
-  <h2>Testimonials [what customers said about us]</h2>
-  <div class="testimonial-slider">
-    <div class="testimonial-track">
-      <!-- Original testimonials -->
-      <div class="testimonial">
-        <p>"A terrific piece of praise"</p>
-        <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"A fantastic bit of feedback"</p>
-        <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"An incredibly insightful comment"</p>
-        <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"A genuinely glowing review"</p>
-        <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
-      </div>
+    <!-- FAQ's -->
+    <section class="faq-question">
+        <section class="locations fade-slide">
+            <h2>Frequently Asked Questions</h2>
+            <button class="accordion"> What does your platform do?</button>
+            <div class="panel">
+                <br>
+                <p>Our platform leverages advanced AI and computer vision to analyze and optimize industrial processes in real time, improving efficiency, accuracy, and productivity.</p>
+                <br>
+            </div>
+            <button class="accordion">Which industries do you serve?</button>
+            <div class="panel">
+                <br>
+                <p>We serve multiple sectors including chemical, cement, power, agriculture, and manufacturing — essentially any industry that benefits from precision material analysis.</p>
+                <br>
+            </div>
+            <button class="accordion">Is your platform customizable to our specific needs?</button>
+            <div class="panel">
+                <br>
+                <p>Yes, our solution is highly adaptable. We work closely with clients to tailor features to their operational requirements and existing workflows.</p>
+                <br>
+            </div>
+            <button class="accordion">Is the system cloud-based or on-premises?</button>
+            <div class="panel">
+                <br>
+                <p>We offer both options. Our SaaS model provides the flexibility of cloud access, but we can also support on-premises deployment for industries requiring local infrastructure.</p>
+                </div>
+            </button>
+        </section>
+    </section>
 
-      <!-- Duplicated testimonials for seamless looping -->
-      <div class="testimonial">
-        <p>"A terrific piece of praise"</p>
-        <div class="author">👤 Jane Doe<br><span>CEO, Acme Corp</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"A fantastic bit of feedback"</p>
-        <div class="author">👤 John Smith<br><span>CTO, BetaTech</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"An incredibly insightful comment"</p>
-        <div class="author">👤 Sarah Lee<br><span>Manager, VisionAI</span></div>
-      </div>
-      <div class="testimonial">
-        <p>"A genuinely glowing review"</p>
-        <div class="author">👤 David Kim<br><span>Engineer, SmartFlow</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ's -->
-<section class="faq-question">
-<section class="locations fade-slide">
-  <h2>Frequently Asked Questions</h2>
-
-    <button class="accordion"> What does your platform do?</button>
-    <div class="panel">
-    <br>
-    <p>Our platform leverages advanced AI and computer vision to analyze and optimize industrial processes in real time, improving efficiency, accuracy, and productivity.</p>
-    <br>
-    </div>
-
-    <button class="accordion">Which industries do you serve?</button>
-    <div class="panel">
-    <br>
-    <p>We serve multiple sectors including chemical, cement, power, agriculture, and manufacturing — essentially any industry that benefits from precision material analysis.</p>
-    <br>
-    </div>
-
-    <button class="accordion">Is your platform customizable to our specific needs?</button>
-    <div class="panel">
-    <br>
-    <p>Yes, our solution is highly adaptable. We work closely with clients to tailor features to their operational requirements and existing workflows.</p>
-    <br>
-    </div>
-
-    <button class="accordion">Is the system cloud-based or on-premises?</button>
-    <div class="panel">
-    <br>
-    <p>We offer both options. Our SaaS model provides the flexibility of cloud access, but we can also support on-premises deployment for industries requiring local infrastructure.</p>
-    <br>
-    </div>
-</section>
-</section>
     <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-column">
-        <h4>Company name</h4>
-        <p>Get in Touch</p>
-        <div class="social-icons">
-          <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:contact@yourcompany.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Company name</h4>
+                <p>Get in Touch</p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <div>
+                    <a href="mailto:contact@yourcompany.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <p>
+                    <a href="#">Chemical</a><br>
+                    <a href="#">Cement</a><br>
+                    <a href="#">Power</a><br>
+                    <a href="#">Other industries</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <p>
+                    <a href="#">Privacy Policy</a><br>
+                    <a href="#">Cookies Policy</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>About us</h4>
+                <p>
+                    <a href="#">Company</a><br>
+                    <a href="#">Events</a><br>
+                    <a href="#">Partners</a><br>
+                    <a href="#">Careers</a>
+                </p>
+            </div>
         </div>
+    </footer>
 
-      </div>
-  
-      <div class="footer-column">
-        <h4>Industries</h4>
-        <p>
-          <a href="#">Chemical</a><br>
-          <a href="#">Cement</a><br>
-          <a href="#">Power</a><br>
-          <a href="#">Other industries</a>
-        </p>
-      </div>
-  
-      <div class="footer-column">
-        <h4>Support</h4>
-        <p>
-          <a href="#">Privacy Policy</a><br>
-          <a href="#">Cookies Policy</a>
-        </p>
-      </div>
-  
-      <div class="footer-column">
-        <h4>About us</h4>
-        <p>
-          <a href="#">Company</a><br>
-          <a href="#">Events</a><br>
-          <a href="#">Partners</a><br>
-          <a href="#">Careers</a>
-        </p>
-      </div>
-    </div>
-  </footer>
+    <script>
+        // FAQ's
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
-  <script>
-    //FAQ's
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-        } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-    });
-    }
-    // Trigger animations when elements enter viewport
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
         }
-      });
-    });
 
-    document.querySelectorAll('.fade-up, .zoom-in, .fade-slide').forEach(el => observer.observe(el));
-  </script>
+        // Trigger animations when elements enter viewport
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                }
+            });
+        });
 
+        document.querySelectorAll('.fade-up, .zoom-in, .fade-slide').forEach(el => observer.observe(el));
+
+        // Navbar Script from Homepage
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById('hamburger');
+            const nav = document.querySelector('.nav-links');
+            const industriesLink = document.querySelector('.nav-item a[href="#industries"]');
+            const dropdown = document.querySelector('.dropdown');
+
+            burger.addEventListener('click', () => {
+                const isOpen = burger.classList.toggle('open');
+                burger.setAttribute('aria-expanded', isOpen);
+                nav.classList.toggle('open');
+            });
+
+            industriesLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            industriesLink.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 767 && !link.parentElement.classList.contains('nav-item')) {
+                        burger.classList.remove('open');
+                        burger.setAttribute('aria-expanded', false);
+                        nav.classList.remove('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767 && !e.target.closest('.nav-item')) {
+                    dropdown.parentElement.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
