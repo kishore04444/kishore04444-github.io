@@ -29,11 +29,24 @@
         }
 
         body {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: var(--dark);
             background-color: var(--light);
             overflow-x: hidden;
             line-height: 1.6;
+            padding-top: 70px; /* Match navbar height from homepage */
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 48px; /* Match navbar height on mobile */
+            }
+        }
+
+        @media (max-width: 479px) {
+            body {
+                padding-top: 44px; /* Match navbar height on very small screens */
+            }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -49,89 +62,172 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
+        /* Navbar Styles from Homepage */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 70px;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+            font-weight: bold;
+            color: #000;
         }
 
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            max-height: 50px;
+            width: auto;
+            vertical-align: middle;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
+            align-items: center;
             list-style: none;
         }
 
-        .nav-links li {
-            margin-left: 30px;
-        }
-
         .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
+            margin: 0 15px;
+            color: #000;
+            font-weight: 300;
+            font-size: 1.1rem;
             position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none; /* Removes default underline */
         }
 
-        .nav-links a:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
+            bottom: -5px;
+            left: 0;
+            background: #000;
+            transition: width 0.3s ease;
         }
 
-        .nav-links a:hover:after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: #000;
+            transform: translateY(-2px);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
+        .contact-btn {
+            padding: 8px 16px;
+            background: rgb(254, 250, 250);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
             border: none;
-            font-size: 24px;
-            color: var(--dark);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: rgb(236, 229, 229);
+            transform: scale(1.05);
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+            min-width: 200px;
+            flex-direction: column;
+            gap: 5px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-item:hover .dropdown {
+            display: flex;
+            opacity: 1;
+        }
+
+        .dropdown-column {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .dropdown-column a {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            color: #000;
+            font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-column a i {
+            margin-right: 10px;
+            color: #364364;
+        }
+
+        .dropdown-column a:hover {
+            background: #f1f1f1;
+            color: #364364;
+            border-radius: 4px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
             cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #000;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.open .top {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.open .middle {
+            opacity: 0;
+        }
+
+        .hamburger.open .bottom {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Hero Section */
@@ -825,33 +921,79 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
+            .navbar {
+                padding: 10px;
+                justify-content: space-between;
+            }
+
+            .logo img {
+                max-height: 40px;
+            }
+
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: white;
+                background: #fff;
                 flex-direction: column;
                 align-items: center;
                 padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
                 transform: translateY(-150%);
-                transition: var(--transition);
+                transition: transform 0.3s ease;
+                z-index: 999;
             }
-            
-            .nav-links.active {
+
+            .nav-links.open {
                 transform: translateY(0);
             }
-            
-            .nav-links li {
+
+            .nav-links a {
                 margin: 15px 0;
+                font-size: 1.2rem;
             }
-            
-            .mobile-menu-btn {
-                display: block;
+
+            .nav-links a::after {
+                display: none; /* Disable hover underline on mobile */
             }
-            
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 10px;
+                box-shadow: none;
+                max-height: 0;
+            }
+
+            .nav-item.open .dropdown {
+                display: flex;
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .dropdown-column {
+                width: 100%;
+            }
+
+            .dropdown-column a {
+                justify-content: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
             .hero {
                 padding-top: 120px;
                 min-height: auto;
@@ -914,27 +1056,44 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 479px) {
+            .logo img {
+                max-height: 30px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="LOGO.jpg" alt="Yantra AI">
-                <span>Yantra AI</span>
-            </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="hometrial.html">Home</a></li>
-                <li><a href="hometrial.html#industries">Industries</a></li>
-                <li><a href="hometrial.html#services">Services</a></li>
-                <li><a href="careerpage.html" class="active">Careers</a></li>
-                <li><a href="AboutPage.html">About</a></li>
-                <li><a href="ContactPage.html">Contact</a></li>
-            </ul>
+    <!-- Navbar from Homepage -->
+    <header class="navbar">
+        <div class="logo"><img src="LOGO.jpg" alt="Yantra AI Logo"></div>
+        <nav class="nav-links">
+            <a href="hometrial.html">Home</a>
+            <div class="nav-item">
+                <a href="#industries" aria-haspopup="true">Industries</a>
+                <div class="dropdown" role="menu">
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-plug"></i> Power</a>
+                        <a href="#"><i class="fas fa-brain"></i> AI</a>
+                        <a href="#"><i class="fas fa-fire"></i> Thermal</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <a href="#"><i class="fas fa-laptop-code"></i> IT</a>
+                        <a href="IndustryPage.html"><i class="fas fa-fire"></i> Cement</a>
+                        <a href="#"><i class="fas fa-vials"></i> Chemical</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#services">Services</a>
+            <a href="careerpage.html" class="active">Careers</a>
+            <a href="AboutPage.html">About</a>
+            <a href="ContactPage.html" class="contact-btn">Contact Us</a>
+        </nav>
+        <div id="hamburger" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
         </div>
     </header>
 
@@ -1318,33 +1477,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Yantra AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                <p>© 2023 Yantra AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
         // Position Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const positionCards = document.querySelectorAll('.position-card');
@@ -1401,18 +1539,55 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
                 }
             });
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
+
+        // Navbar Script from Homepage
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById('hamburger');
+            const nav = document.querySelector('.nav-links');
+            const industriesLink = document.querySelector('.nav-item a[href="#industries"]');
+            const dropdown = document.querySelector('.dropdown');
+
+            burger.addEventListener('click', () => {
+                const isOpen = burger.classList.toggle('open');
+                burger.setAttribute('aria-expanded', isOpen);
+                nav.classList.toggle('open');
+            });
+
+            industriesLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            industriesLink.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.parentElement.classList.toggle('open');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 767 && !link.parentElement.classList.contains('nav-item')) {
+                        burger.classList.remove('open');
+                        burger.setAttribute('aria-expanded', false);
+                        nav.classList.remove('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767 && !e.target.closest('.nav-item')) {
+                    dropdown.parentElement.classList.remove('open');
+                }
+            });
+        });
+
+        // AOS Initialization
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -1420,5 +1595,6 @@
             startEvent: 'DOMContentLoaded'
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
